@@ -301,7 +301,7 @@ tag_archive:
 #   permalinks:
 #     category: /categories/:name/
 #     tag: /tags/:name/
-
+#
 
 # HTML Compression
 # - http://jch.penibelst.de/
