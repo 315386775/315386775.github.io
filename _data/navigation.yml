@@ -3,7 +3,7 @@ main:
   - title: "Blog Posts"
     url: /year-archive/
 
-  - title: "Publications"
+  - title: "Projects"
     url: /publications/
 
   # - title: "Talks"
