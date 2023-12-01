@@ -173,7 +173,7 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
+  algorithm-interview:
     output: true
     permalink: /:collection/:path/
   publications:
@@ -210,7 +210,7 @@ defaults:
   # _teaching
   - scope:
       path: ""
-      type: teaching
+      type: algorithm-interview
     values:
       layout: single
       author_profile: true

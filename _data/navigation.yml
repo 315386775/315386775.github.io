@@ -3,19 +3,19 @@ main:
   - title: "Blog Posts"
     url: /year-archive/
 
-  - title: "Projects"
+  - title: "AI Projects"
     url: /publications/
 
   # - title: "Talks"
   #   url: /talks/    
 
-  - title: "Teaching"
-    url: /teaching/    
+  - title: "Algorithm Interview"
+    url: /algorithm-interview/    
     
   # - title: "Portfolio"
   #   url: /portfolio/  
   
-  - title: "CV"
+  - title: "Informatics Olympiad CSP-J/S"
     url: /cv/
     
   # - title: "Guide"
