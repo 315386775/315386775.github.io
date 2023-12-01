@@ -20,30 +20,30 @@ TensorRT 为什么能跑那么快
 ======
 TensorRT 执行五种类型的优化以提高深度学习模型的吞吐量。
 
-![优化](blog1201/00.png)
+![优化](/posts/blog1201/00.png)
 
 - 算子融合(层与张量融合)：简单来说就是通过融合一些计算 op 或者去掉一些多余 op 来减少数据流通次数以及显存的频繁使用来提速。
 
 - TensorRT 通过对层间的横向或纵向合并，横向合并可以把卷积、偏置和激活层合并成一个 CBR 结构，只占用一个 CUDA 核心。纵向合并可以把结构相同，但是权值不同的层合并成一个更宽的层，也只占用一个 CUDA 核心。
 
-![卷积融合](blog1201/01.png)
+![卷积融合](/posts/blog1201//01.png)
 
 - Conv + ReLU 这样的结构一般也是合并成一个 Conv 进行运算的，而这一点在全精度模型中则办不到，取决于函数是否也只是在做 clip 操作，例如 ReLU6 也有同样的性质。参考链接 5。
 
 - Concat 层的消除：对于 channel 维度的 concat 层，TensorRT 通过非拷贝方式将层输出定向到正确的内存地址来消除 concat 层，从而减少内存访存次数。
 
-![concat](blog1201/02.png)
-![layer](blog1201/03.png)
+![concat](/posts/blog1201//02.png)
+![layer](/posts/blog1201//03.png)
 
 - 量化：量化即 IN8 量化或者 FP16 以及 TF32 等不同于常规 FP32 精度的使用，这些精度可以显著提升模型执行速度并且不会保持原先模型的精度。在转换为 FP16（较低精度）时，由于 FP16 的动态范围低于 FP32，我们的一些权重会由于溢出而缩小。_使用缩放和偏置项以 INT8 精度映射这些权重。_
 
-  ![量化](blog1201/04.jpg)
+  ![量化](/posts/blog1201//04.jpg)
 
 - 如何获得阈值的最优值？因此，为了在 INT8 TensorRT 中表示 FP32 分布，使用 KL 散度来测量差异并将其最小化。TensorRT 使用迭代搜索而不是基于梯度下降的优化来寻找阈值。下面给出了 KL 散度的伪代码步骤
 
-![阈值](blog1201/001.png)
+![阈值](/posts/blog1201//001.png)
 
-![阈值](blog1201/002.png)
+![阈值](/posts/blog1201//002.png)
 
 - 支持的融合优化，Convolution and GELU Activation，Convolution And ElementWise Operation，Shuffle and Reduce：一个没有 reshape 的 Shuffle 层，然后是一个 Reduce 层，可以融合成一个 Reduce 层。 Shuffle 层可以执行排列，但不能执行任何重塑操作。 Reduce 层必须有一组 keepDimensions 维度。SoftMax 和 TopK 可以融合成单层。 SoftMax 可能包含也可能不包含 Log 操作。
 
