@@ -1,7 +1,9 @@
 ---
 title: '模型部署系列：Test'
+collection: teaching
 date: 2023-12-01
-permalink: /teaching/2023/12/model-tensorrt/
+permalink: /teaching/20231201/model-tensorrt/
+venue: "A, deeplearning"
 tags:
   - TensorRT
   - 量化

@@ -8,4 +8,14 @@ tags:
   - category2
 ---
 
+---
+title: "Teaching experience 1"
+collection: teaching
+type: "Undergraduate course"
+permalink: /teaching/2014-spring-teaching-1
+venue: "University 1, Department"
+date: 2014-01-01
+location: "City, Country"
+---
+
 This post will show up by default. To disable scheduling of future posts, edit `config.yml` and set `future: false`. 
