@@ -4,8 +4,8 @@ title: "Tech Blog & Projects Repository - Deep Learning, Computer Vision, Interv
 excerpt: "About me"
 author_profile: true
 redirect_from: 
-  - /about/
-  - /about.html
+  - /aboutx/
+  - /aboutx.html
 ---
 
 We provide a comprehensive platform for students, researchers, and professionals interested in computer vision and deep learning. It features technical blogs, insightful projects, interview question repositories, informatics Olympiad materials, and common tools sharing. The blog section offers articles and tutorials on image processing and machine learning, while the projects repository showcases open-source projects for practical applications. The deep learning algorithm interview question repository helps with interview preparation, and the informatics Olympiad CSP repository aids in algorithmic thinking and programming skills. Additionally, the common tools sharing section provides insights into popular technical tools and resources.
