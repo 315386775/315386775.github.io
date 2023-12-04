@@ -1,7 +1,7 @@
 ---
 title: '模型部署系列：TensorRT优化原理及模型转换的三种方式'
 date: 2023-12-01
-permalink: /posts/2012/12/模型部署/
+permalink: /posts/2023/12/model-tensorrt/
 tags:
   - TensorRT
   - 量化

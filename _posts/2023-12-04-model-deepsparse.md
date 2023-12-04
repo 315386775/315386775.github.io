@@ -1,7 +1,7 @@
 ---
 title: '模型部署系列：10x速度提升，Yolo检测模型稀疏化——CPU上超500FPS'
 date: 2023-12-04
-permalink: /posts/2012/1204/模型部署/
+permalink: /posts/2023/12/model-deepsparse/
 tags:
   - YOLOv8
   - DeepSparse
