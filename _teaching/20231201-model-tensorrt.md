@@ -3,7 +3,9 @@ title: '模型部署系列：Test'
 collection: teaching
 date: 2023-12-01
 permalink: /teaching/20231201/model-tensorrt/
+type: "CV"
 venue: "A, deeplearning"
+location: "City, Country"
 tags:
   - TensorRT
   - 量化
