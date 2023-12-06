@@ -1,8 +1,8 @@
 ---
 title: '模型部署系列：Test'
 collection: teaching
-date: 2023-12-01
-permalink: /teaching/20231201/model-tensorrt/
+date: 2023-12-05
+permalink: /teaching/20231205/cv-loss-awesome/
 type: "CV"
 venue: "A, deeplearning"
 location: "City, Country"

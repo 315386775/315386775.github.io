@@ -79,7 +79,7 @@ deepsparse.yolov8.annotate --source basilica.jpg --model_filepath "yolov8n.onnx 
 
 ![对比](/posts/blog1204/render.png)
 
-通过优化推理模型，可以进一步提升 DeepSparse 的性能。DeepSparse 的构建是为了利用通过权重修剪和量化进行优化的模型，这些技术可以在不降低准确性的情况下大幅缩减所需的计算量。通过我们的 One-Shot 优化方法（将在即将推出的 Sparsify 产品中提供），我们生成了 YOLOv8s 和 YOLOv8n ONNX 模型，这些模型已量化为 INT8，同时保持至少 99% 的原始 FP32 mAP@0.5 。这是仅使用 1024 个样本且没有反向传播即可实现的。您可以[在此处下载]https://drive.google.com/drive/folders/1vf4Es-8bxhx348TzzfhvljMQUo62XhQ4 量化模型。
+通过优化推理模型，可以进一步提升 DeepSparse 的性能。DeepSparse 的构建是为了利用通过权重修剪和量化进行优化的模型，这些技术可以在不降低准确性的情况下大幅缩减所需的计算量。通过我们的 One-Shot 优化方法（将在即将推出的 Sparsify 产品中提供），我们生成了 YOLOv8s 和 YOLOv8n ONNX 模型，这些模型已量化为 INT8，同时保持至少 99% 的原始 FP32 mAP@0.5 。这是仅使用 1024 个样本且没有反向传播即可实现的。您可以[在此处下载](https://drive.google.com/drive/folders/1vf4Es-8bxhx348TzzfhvljMQUo62XhQ4) 量化模型。
 
 运行以下命令来测试性能：
 
