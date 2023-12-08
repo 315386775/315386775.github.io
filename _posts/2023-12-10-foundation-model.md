@@ -47,7 +47,7 @@ optimizer.step()
 
     损失函数应该适合分割任务；
 
-- 详细代码参考：第六部分的附录[4]。
+- 详细代码参考：附录[4]。
 
 ### SAM 特定微调
 
@@ -77,7 +77,7 @@ low_res_masks, iou_predictions = sam_model.mask_decoder(
 upscaled_masks = sam_model.postprocess_masks(low_res_masks, input_size, original_image_size).to(device)
 ```
 
-- 详细代码参考：第六部分的附录[3], 微调后的模型在文本检测的数据集上效果对比。
+- 详细代码参考：附录[3], 微调后的模型在文本检测的数据集上效果对比。
 
 ### 采用嵌入领域知识的微调
 
@@ -85,9 +85,9 @@ upscaled_masks = sam_model.postprocess_masks(low_res_masks, input_size, original
 
 - 提出 {SAM-Adapter}，而不是微调 SAM 网络，它通过使用简单而有效的适配器将特定于域的信息或视觉提示合并到解码网络中。
 
-- 详细代码参考：第六部分的附录[5]。
+- 详细代码参考：附录[5]。
 
-## 参考文献及代码项目
+## 附录：参考文献及代码项目
 
 [1] 微调应用示例：https://github.com/NielsRogge/Transformers-Tutorials/blob/master/SAM/Fine_tune_SAM_(segment_anything)_on_a_custom_dataset.ipynb
 
@@ -101,37 +101,5 @@ upscaled_masks = sam_model.postprocess_masks(low_res_masks, input_size, original
 
 [6] SAM微调集合：https://github.com/luca-medeiros/lightning-sam
 
-[7] CT：https://github.com/rekalantar/MedSegmentAnything_SAM_LungCT
+[7] 微调代码： https://colab.research.google.com/drive/1F6uRommb3GswcRlPZWpkAQRMVNdVH7Ww?usp=sharing#scrollTo=r0oru8hAn6q2
 
-[8] 微调代码： https://colab.research.google.com/drive/1F6uRommb3GswcRlPZWpkAQRMVNdVH7Ww?usp=sharing#scrollTo=r0oru8hAn6q2
-
-[9] 医疗影像领域的SAM：https://github.com/bowang-lab/medsam
-
-[10] 边缘计算部署：https://github.com/ChaoningZhang/MobileSAM
-
-
-YOLOv8 用法
-======
-
-新的[ultralytics包](https://pypi.org/project/ultralytics/)可以轻松地使用自定义数据训练 YOLO 模型并将其转换为 ONNX 格式以进行部署。
-
-以下是 Python API 的示例：
-
-```python
-from ultralytics import YOLO
-
-# Load a model
-model = YOLO("yolov8n.yaml")  # build a new model from scratch
-model = YOLO("yolov8n.pt")  # load a pretrained model (recommended for training)
-
-# Use the model
-results = model.train(data="coco128.yaml", epochs=3)  # train the model
-results = model.val()  # evaluate model performance on the validation set
-results = model("https://ultralytics.com/images/bus.jpg")  # predict on an image
-success = YOLO("yolov8n.pt").export(format="onnx")  # export a model to ONNX format
-```
-
-
-参考链接
-======
-- [YOLOV8稀疏量化部署](https://neuralmagic.com/blog/yolov8-detection-10x-faster-with-deepsparse-500-fps-on-a-cpu/)
