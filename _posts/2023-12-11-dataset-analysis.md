@@ -26,7 +26,11 @@ Lightly Insights：可以轻松获取关于机器学习数据集基本洞察的�
 ![Alt](/posts/blog1211/screenshot2.png#pic_center=600x400)
 
 ## 安装
+
+```sh
 pip install lightly-insights
+```
+
 
 ## 用法
 
