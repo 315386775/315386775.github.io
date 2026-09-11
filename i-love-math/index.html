@@ -11,34 +11,37 @@
     body{margin:0;min-height:100vh;color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;background:radial-gradient(circle at 8% 10%,rgba(255,220,111,.34),transparent 18rem),radial-gradient(circle at 94% 18%,rgba(81,204,171,.2),transparent 22rem),linear-gradient(180deg,#eef8ff 0%,#f7fbff 66%,#fff9e9 100%)}
     button{font:inherit;cursor:pointer}.sky{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}.sky span{position:absolute;color:rgba(55,104,216,.07);font-size:7rem;font-weight:900}.sky span:nth-child(1){left:3%;top:27%;transform:rotate(-14deg)}.sky span:nth-child(2){right:5%;top:38%;transform:rotate(16deg)}.sky span:nth-child(3){left:14%;bottom:5%;transform:rotate(8deg)}
     header{width:min(1120px,calc(100% - 32px));margin:auto;padding:28px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:14px}.mark{width:58px;height:58px;display:grid;place-items:center;border-radius:20px;color:#fff;background:var(--blue);box-shadow:0 8px 0 #214ca8;font-size:2.25rem;font-weight:900;transform:rotate(-4deg)}h1{margin:0;font-size:clamp(1.65rem,4vw,2.35rem);line-height:1;color:#1d3f72;letter-spacing:.04em}.brand p{margin:8px 0 0;color:#668098;font-size:.95rem;font-weight:700}.goal{min-width:220px;padding:12px 16px;border:2px solid #d7e6f3;border-radius:20px;background:#ffffffcc;box-shadow:0 8px 24px rgba(39,85,127,.08)}.goal small{display:block;margin-bottom:5px;color:#5c7183;font-size:.82rem;font-weight:800}.stars{display:flex;gap:7px}.star{color:#dce6ee;font-size:1.45rem;transition:.25s}.star.on{color:#ffc63d;filter:drop-shadow(0 2px #eaa516);transform:scale(1.08) rotate(5deg)}
-    .shell{width:min(960px,calc(100% - 32px));margin:auto}.mission{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;margin-bottom:16px;padding:14px 18px;border:2px solid #bcd8f3;border-radius:22px;background:linear-gradient(110deg,#e8f4ff,#fff);box-shadow:0 8px 22px rgba(39,85,127,.08)}.mission.complete{border-color:#f0c84d;background:linear-gradient(110deg,#fff4bd,#fff)}.mission>span{font-size:2rem}.mission strong{display:block;color:#244e78}.mission p{margin:3px 0 0;color:#667f94;font-size:.86rem;font-weight:700}.mission>b{color:#e7ab16;font-size:1.7rem}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:8px;border:2px solid #d8e6f2;border-radius:24px;background:#ffffffdb;box-shadow:0 10px 30px rgba(39,85,127,.08)}.tab{height:58px;border:0;border-radius:16px;background:transparent;color:#667a8e;font-size:1rem;font-weight:900;transition:.2s}.tab[aria-selected="true"]{color:#fff;background:var(--blue);box-shadow:0 6px 0 #214ca8;transform:translateY(-2px)}.panel{margin-top:18px;min-height:500px;padding:clamp(22px,5vw,42px);border:2px solid rgba(202,222,238,.92);border-radius:32px;background:#ffffffed;box-shadow:0 20px 60px rgba(36,81,120,.12)}.panel[hidden]{display:none}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.heading h2{margin:10px 0 0;font-size:clamp(1.45rem,4vw,2.1rem);line-height:1.25;color:var(--deep)}.tag{display:inline-flex;padding:6px 12px;border-radius:999px;font-size:.86rem;font-weight:900;letter-spacing:.06em}.tag.blue{color:#275bbd;background:#e4edff}.tag.yellow{color:#805500;background:#fff0ba}.tag.purple{color:#744db3;background:#f1e7ff}.tag.green{color:#147153;background:#e1f8ef}.tag.orange{color:#9a5608;background:#ffead2}.tag.coral{color:#a63e56;background:#ffe4e9}.mascot{font-size:3.5rem;filter:drop-shadow(0 5px 2px rgba(38,61,87,.1));animation:float 2.4s ease-in-out infinite}
+    .shell{width:min(1000px,calc(100% - 32px));margin:auto}.mission{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;margin-bottom:16px;padding:14px 18px;border:2px solid #bcd8f3;border-radius:22px;background:linear-gradient(110deg,#e8f4ff,#fff);box-shadow:0 8px 22px rgba(39,85,127,.08)}.mission.complete{border-color:#f0c84d;background:linear-gradient(110deg,#fff4bd,#fff)}.mission>span{font-size:2rem}.mission strong{display:block;color:#244e78}.mission p{margin:3px 0 0;color:#667f94;font-size:.86rem;font-weight:700}.mission>b{color:#e7ab16;font-size:1.7rem}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:8px;border:2px solid #d8e6f2;border-radius:24px;background:#ffffffdb;box-shadow:0 10px 30px rgba(39,85,127,.08)}.tab{height:58px;border:0;border-radius:16px;background:transparent;color:#667a8e;font-size:.95rem;font-weight:900;transition:.2s}.tab[aria-selected="true"]{color:#fff;background:var(--blue);box-shadow:0 6px 0 #214ca8;transform:translateY(-2px)}.tab[data-tab="report"][aria-selected="true"]{background:#7b55b8;box-shadow:0 6px 0 #56378a}.panel{margin-top:18px;min-height:500px;padding:clamp(22px,5vw,42px);border:2px solid rgba(202,222,238,.92);border-radius:32px;background:#ffffffed;box-shadow:0 20px 60px rgba(36,81,120,.12)}.panel[hidden]{display:none}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.heading h2{margin:10px 0 0;font-size:clamp(1.45rem,4vw,2.1rem);line-height:1.25;color:var(--deep)}.tag{display:inline-flex;padding:6px 12px;border-radius:999px;font-size:.86rem;font-weight:900;letter-spacing:.06em}.tag.blue{color:#275bbd;background:#e4edff}.tag.yellow{color:#805500;background:#fff0ba}.tag.purple{color:#744db3;background:#f1e7ff}.tag.green{color:#147153;background:#e1f8ef}.tag.orange{color:#9a5608;background:#ffead2}.tag.coral{color:#a63e56;background:#ffe4e9}.tag.report{color:#57358f;background:#eee4ff}.mascot{font-size:3.5rem;filter:drop-shadow(0 5px 2px rgba(38,61,87,.1));animation:float 2.4s ease-in-out infinite}.knowledge-line{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 -12px;color:#60778b;font-size:.9rem;font-weight:800}.knowledge-chip{display:inline-flex;padding:6px 11px;border:1px solid #bad0ef;border-radius:999px;color:#245596;background:#e8f1ff;font-weight:900}
     .equation{display:flex;justify-content:center;align-items:center;gap:clamp(14px,3vw,28px);margin-top:28px;padding:24px;border-radius:24px;background:#f3f8ff;color:var(--deep);font-size:clamp(2.4rem,9vw,4.8rem);font-weight:950}.answer-box{width:1.25em;height:1.25em;display:grid;place-items:center;border:4px dashed #8db0e7;border-radius:22px;color:var(--blue);background:#fff}.answers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}.answer,.logic-choice{min-height:72px;border:3px solid #cbddec;border-radius:20px;background:#fff;color:#214361;font-size:2rem;font-weight:950;box-shadow:0 6px 0 #b7cedf;transition:.15s}.answer:hover,.logic-choice:hover{border-color:#76a1e3;transform:translateY(-2px)}.answer.correct,.logic-choice.correct{border-color:var(--green);background:#e5fbf2;color:#147153;box-shadow:0 6px 0 #7bcbae;animation:celebrate .45s}.answer.wrong,.logic-choice.wrong{border-color:#ef8994;background:#fff0f2;color:#bd3f50;box-shadow:0 6px 0 #eaa3ab;animation:shake .3s}.feedback{min-height:58px;margin-top:24px;display:flex;align-items:center;justify-content:center;gap:16px;color:#70869a;font-weight:800;text-align:center}.feedback strong{color:#16805d;font-size:1.2rem}.feedback .bad{color:#b4505c}.next,.play,.step{height:46px;padding:0 20px;border:0;border-radius:15px;color:#fff;background:var(--blue);box-shadow:0 5px 0 #214ca8;font-weight:900}.next:active,.play:active,.step:active{transform:translateY(3px);box-shadow:0 2px 0 #214ca8}
     .demo-picker{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.picker-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:11px;border-radius:17px;background:#f4f8fc}.picker-group>span{width:100%;color:#657b8e;font-size:.82rem;font-weight:900}.example{height:36px;padding:0 12px;border:2px solid #bcd2e5;border-radius:12px;background:#fff;color:#315875;font-weight:900}.example.active{border-color:#3768d8;color:#fff;background:#3768d8;box-shadow:0 3px 0 #214ca8}.example.subtract.active{border-color:#845fc3;background:#845fc3;box-shadow:0 3px 0 #5d3d91}.demo{display:grid;grid-template-columns:1.3fr .9fr;gap:28px;margin-top:18px}.frames{position:relative;display:grid;gap:22px;align-content:center;padding:26px;border-radius:24px;background:#f5f9fd}.frame-group{display:grid;gap:9px}.frame-label{color:#657b8e;font-size:.9rem;font-weight:900}.ten-frame{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:7px;border:3px solid #9fb8ca;border-radius:13px;background:#fff}.cell{position:relative;aspect-ratio:1;border:1px dashed #d2e1eb;border-radius:8px;background:#f6f9fb}.cell.filled:after{content:"";position:absolute;inset:17%;border-radius:50%;background:#4d7edf;box-shadow:inset 0 -4px 0 rgba(20,55,120,.18);animation:pop .35s}.cell.yellow:after,.cell.moved:after{background:var(--yellow);box-shadow:inset 0 -4px 0 rgba(159,104,0,.18)}.cell.moved:after{animation:move .6s}.arrow{position:absolute;left:50%;top:50%;padding:5px 10px;border-radius:999px;color:#995f00;background:#ffe49a;font-weight:950;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:.35s}.arrow.show{opacity:1;transform:translate(-50%,-50%) scale(1)}.arrow.subtract{color:#744db3;background:#eee2ff}.explain{padding:24px;border:2px solid #f3d475;border-radius:24px;background:#fff7d9}.step-count{display:inline-flex;padding:5px 11px;border-radius:999px;color:#805500;background:#ffe9a3;font-size:.82rem;font-weight:950}.explain h3{margin:18px 0 10px;font-size:1.45rem;line-height:1.35}.explain p{min-height:70px;margin:0;color:#705e34;line-height:1.75;font-weight:700}.step-dots{display:flex;gap:7px;margin:18px 0}.step-dots i{width:9px;height:9px;border-radius:99px;background:#dfcc93;transition:.25s}.step-dots i.on{width:24px;background:#e4a600}.demo-actions{display:flex;flex-wrap:wrap;gap:10px}.play{color:#3f2c00;background:#edaa0c;box-shadow:0 5px 0 #c98700}.play:disabled{opacity:.6;cursor:default}.step{border:2px solid #dcbd62;color:#513b0d;background:#fffdf4;box-shadow:0 5px 0 #dcbd62}
     .sequence{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:clamp(8px,2vw,16px);margin-top:28px;padding:28px 14px;border-radius:24px;background:#f7f2ff}.sequence span{min-width:clamp(52px,12vw,78px);min-height:clamp(52px,12vw,78px);display:grid;place-items:center;padding:7px;border:3px solid #cab2ef;border-radius:19px;background:#fff;color:#4f3c70;font-size:clamp(1.35rem,4vw,2.2rem);font-weight:950;box-shadow:0 6px 0 #dfd0f5}.sequence .mystery{color:#fff;background:var(--purple);border-color:#714ead;box-shadow:0 6px 0 #5d3d91;animation:pulse 1.6s infinite}.logic-options{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.logic-feedback{min-height:76px;margin-top:22px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 16px;color:#7659a8;font-weight:850;text-align:center}.logic-feedback p{margin:0;color:#5c6d7f}.sudoku-layout{display:grid;grid-template-columns:minmax(260px,360px) 1fr;gap:34px;align-items:center;margin-top:30px}.sudoku-grid{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;border:4px solid #6648a2;border-radius:20px;background:#6648a2;gap:3px;box-shadow:0 10px 0 #dfd0f5}.sudoku-grid span{aspect-ratio:1;display:grid;place-items:center;color:#3c2a60;background:#fff;font-size:clamp(1.7rem,5vw,2.5rem);font-weight:950}.sudoku-grid span.blank{color:#fff;background:#845fc3;animation:pulse 1.6s infinite}.sudoku-side>p{margin:0 0 20px;color:#657b8e;line-height:1.7;font-weight:800}.sudoku-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}footer{padding:24px 16px 34px;color:#698094;font-weight:800;text-align:center}footer b{color:#e2ad22;margin:0 5px}
-    @keyframes float{50%{transform:translateY(-6px) rotate(3deg)}}@keyframes pop{from{transform:scale(.4);opacity:0}}@keyframes move{from{transform:translateX(120%) scale(.6);opacity:.3}}@keyframes celebrate{50%{transform:scale(1.06) rotate(1deg)}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}@keyframes pulse{50%{transform:scale(1.05)}}
-    @media(max-width:720px){header{align-items:flex-start;padding-top:18px}.mark{width:50px;height:50px;border-radius:16px}.brand p,.goal small{display:none}.goal{min-width:0;padding:10px 12px}.stars{gap:3px}.star{font-size:1.2rem}.tab{height:52px;font-size:.82rem}.panel{min-height:540px}.answers{grid-template-columns:repeat(2,1fr)}.demo-picker,.demo,.sudoku-layout{grid-template-columns:1fr}.sudoku-grid{width:min(100%,340px);margin:auto}.explain p{min-height:0}.feedback{flex-direction:column}}
+    .report-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.report-stat{padding:18px;border:2px solid #d8e5f0;border-radius:20px;background:#f8fbff;text-align:center}.report-stat b{display:block;color:#285cae;font-size:2rem}.report-stat span{color:#687e91;font-weight:800}.diagnosis{margin-top:24px;padding:20px;border:2px solid #ead7ff;border-radius:22px;background:#faf6ff}.diagnosis h3{margin:0 0 8px;color:#5d3a91}.diagnosis p{margin:0;color:#68748a;line-height:1.7;font-weight:700}.knowledge-groups{display:grid;gap:22px;margin-top:24px}.knowledge-group h3{margin:0 0 10px;color:#254a70}.knowledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.knowledge-card{padding:13px;border:2px solid #dce7f0;border-radius:16px;background:#fff}.knowledge-card strong{display:block;margin-bottom:6px;color:#294c6b}.knowledge-card span{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:.78rem;font-weight:900}.knowledge-card small{display:block;margin-top:7px;color:#718497}.status-master span{color:#147153;background:#dcf8ec}.status-growing span{color:#8a6100;background:#fff0bd}.status-review span{color:#a54152;background:#ffe2e8}.status-new span{color:#64788a;background:#edf2f6}.empty-report{margin-top:28px;padding:34px;border:3px dashed #cbb8eb;border-radius:24px;color:#6f5a91;background:#faf7ff;text-align:center;font-weight:800}.report-go{min-height:40px;margin:10px 8px 0 0;padding:0 14px;border:0;border-radius:13px;color:#fff;background:#7b55b8;box-shadow:0 4px 0 #56378a;font-weight:900}.celebration{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:rgba(29,50,78,.3);backdrop-filter:blur(5px)}.celebration[hidden]{display:none}.celebrate-card{position:relative;z-index:2;width:min(420px,calc(100% - 40px));padding:34px 25px;border:4px solid #ffd75e;border-radius:30px;background:#fff;text-align:center;box-shadow:0 24px 80px rgba(24,49,81,.28);animation:card-pop .45s}.celebrate-card .big{font-size:4rem}.celebrate-card h2{margin:8px 0;color:#244e78;font-size:2rem}.celebrate-card p{margin:0 0 20px;color:#61788d;font-weight:800;line-height:1.6}.flower{position:fixed;top:-10vh;z-index:1;font-size:clamp(1.2rem,4vw,2.3rem);animation:flower-fall 3.3s linear forwards;pointer-events:none}
+    @keyframes float{50%{transform:translateY(-6px) rotate(3deg)}}@keyframes pop{from{transform:scale(.4);opacity:0}}@keyframes move{from{transform:translateX(120%) scale(.6);opacity:.3}}@keyframes celebrate{50%{transform:scale(1.06) rotate(1deg)}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}@keyframes pulse{50%{transform:scale(1.05)}}@keyframes card-pop{from{opacity:0;transform:scale(.72) rotate(-4deg)}}@keyframes flower-fall{to{transform:translateY(115vh) rotate(720deg);opacity:.9}}
+    @media(max-width:720px){header{align-items:flex-start;padding-top:18px}.mark{width:50px;height:50px;border-radius:16px}.brand p,.goal small{display:none}.goal{min-width:0;padding:10px 12px}.stars{gap:2px}.star{font-size:.9rem}.tabs{grid-template-columns:repeat(2,1fr)}.tab{height:52px;font-size:.82rem}.panel{min-height:540px}.answers{grid-template-columns:repeat(2,1fr)}.demo-picker,.demo,.sudoku-layout{grid-template-columns:1fr}.sudoku-grid{width:min(100%,340px);margin:auto}.explain p{min-height:0}.feedback{flex-direction:column}.report-intro,.knowledge-grid{grid-template-columns:1fr}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
   <div class="sky" aria-hidden="true"><span>＋</span><span>△</span><span>＝</span></div>
   <header>
-    <div class="brand"><span class="mark" aria-hidden="true">∞</span><div><h1>我爱数学</h1><p>天津小朋友的数学乐园</p></div></div>
-    <div class="goal" aria-label="今日小目标"><small>今日小目标</small><div class="stars" id="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div>
+    <div class="brand"><span class="mark" aria-hidden="true">∞</span><div><h1>我爱数学</h1><p>天津小朋友的数学闯关乐园</p></div></div>
+    <div class="goal" aria-label="十题闯关进度"><small id="roundText">十题闯关 · 0 / 10</small><div class="stars" id="stars"></div></div>
   </header>
   <main class="shell">
     <div class="mission" id="mission"><span id="missionIcon">🚀</span><div><strong id="missionTitle">数学星球探险</strong><p id="missionText">再答对 5 题，就能点亮彩虹徽章。</p></div><b>🏆</b></div>
     <nav class="tabs" role="tablist" aria-label="选择学习模块">
-      <button class="tab" role="tab" aria-selected="true" data-tab="practice">🧮 加减法</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="ten">💡 凑十法</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="logic">🧠 逻辑思维</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="geometry">🧩 图形空间</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="life">🛒 生活数学</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="sudoku">🔢 数独乐园</button>
+      <button class="tab" role="tab" aria-selected="true" data-tab="practice">🐳 口算海湾</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="ten">🐿️ 凑十工坊</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="logic">🦉 密码森林</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="geometry">🧩 图形太空站</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="life">🐼 熊猫市集</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="sudoku">🕵️ 数字侦探局</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="report">📊 知识体检</button>
     </nav>
 
     <section class="panel" id="practice" role="tabpanel">
       <div class="heading"><div><span class="tag blue">20 以内</span><h2>算一算，选出正确答案</h2></div><span class="mascot" aria-hidden="true">🐳</span></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="mathKp">⭐ 20以内加减法</span></div>
       <div class="equation" id="equation" aria-live="polite"></div>
       <div class="answers" id="answers"></div>
       <div class="feedback" id="mathFeedback" aria-live="polite">点一点你认为正确的数字</div>
@@ -46,6 +49,7 @@
 
     <section class="panel" id="ten" role="tabpanel" hidden>
       <div class="heading"><div><span class="tag yellow">动画小课堂</span><h2 id="demoHeading">凑十加法：8 + 5</h2></div><span class="mascot" aria-hidden="true">🐿️</span></div>
+      <div class="knowledge-line">动画知识点 <span class="knowledge-chip" id="demoKp">⭐ 凑十法</span></div>
       <div class="demo-picker" aria-label="选择动画例题">
         <div class="picker-group"><span>凑十加法</span><button class="example active" data-demo="0">8 + 5</button><button class="example" data-demo="1">9 + 6</button><button class="example" data-demo="2">7 + 8</button></div>
         <div class="picker-group"><span>破十减法</span><button class="example subtract" data-demo="3">13 − 5</button><button class="example subtract" data-demo="4">15 − 7</button><button class="example subtract" data-demo="5">12 − 4</button></div>
@@ -66,30 +70,49 @@
 
     <section class="panel" id="logic" role="tabpanel" hidden>
       <div class="heading"><div><span class="tag purple">动动小脑筋</span><h2 id="logicPrompt"></h2></div><span class="mascot" aria-hidden="true">🦉</span></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="logicKp"></span></div>
       <div class="sequence" id="sequence"></div><div class="logic-options" id="logicOptions"></div><div class="logic-feedback" id="logicFeedback" aria-live="polite">✨ 找找藏起来的规律</div>
     </section>
 
     <section class="panel" id="geometry" role="tabpanel" hidden>
       <div class="heading"><div><span class="tag green">看一看 · 转一转</span><h2 id="geometryPrompt"></h2></div><span class="mascot" aria-hidden="true">🧩</span></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="geometryKp"></span></div>
       <div class="sequence" id="geometrySequence"></div><div class="logic-options" id="geometryOptions"></div><div class="logic-feedback" id="geometryFeedback" aria-live="polite">✨ 观察形状和方向</div>
     </section>
 
     <section class="panel" id="life" role="tabpanel" hidden>
       <div class="heading"><div><span class="tag orange">数学就在身边</span><h2 id="lifePrompt"></h2></div><span class="mascot" aria-hidden="true">🛒</span></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="lifeKp"></span></div>
       <div class="sequence" id="lifeSequence"></div><div class="logic-options" id="lifeOptions"></div><div class="logic-feedback" id="lifeFeedback" aria-live="polite">✨ 用数学解决生活问题</div>
     </section>
 
     <section class="panel" id="sudoku" role="tabpanel" hidden>
       <div class="heading"><div><span class="tag coral">数字侦探</span><h2>每行每列都有 1、2、3、4，空格填几？</h2></div><span class="mascot" aria-hidden="true">🕵️</span></div>
-      <div class="sudoku-layout"><div class="sudoku-grid" id="sudokuGrid"></div><div class="sudoku-side"><p>横着看、竖着看，每个数字都只能出现一次。</p><div class="sudoku-options" id="sudokuOptions"></div><div class="logic-feedback" id="sudokuFeedback" aria-live="polite">✨ 找出缺少的数字</div></div></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="sudokuKp"></span></div>
+      <div class="sudoku-layout"><div class="sudoku-grid" id="sudokuGrid"></div><div class="sudoku-side"><p id="sudokuClue">横着看、竖着看，每个数字都只能出现一次。</p><div class="sudoku-options" id="sudokuOptions"></div><div class="logic-feedback" id="sudokuFeedback" aria-live="polite">✨ 找出缺少的数字</div></div></div>
+    </section>
+
+    <section class="panel" id="report" role="tabpanel" hidden>
+      <div class="heading"><div><span class="tag report">成长雷达</span><h2>知识体检报告</h2></div><span class="mascot" aria-hidden="true">🩺</span></div>
+      <div id="reportBody"></div>
     </section>
   </main>
   <footer><b>★</b> 每天 10 分钟，数学越来越有趣 <b>★</b></footer>
 
+  <div class="celebration" id="celebration" hidden role="dialog" aria-modal="true" aria-labelledby="celebrateTitle">
+    <div id="flowerField"></div><div class="celebrate-card"><div class="big" id="celebrateEmoji">🌸</div><h2 id="celebrateTitle">完成 5 题啦！</h2><p id="celebrateText">认真思考的你，正在一点点变厉害！</p><button class="next" id="closeCelebration">继续探险 →</button></div>
+  </div>
+
   <script>
     (()=>{
-      let score=0,mathAnswer=13,demoIndex=0,demoStep=0,demoTimer=null,logicIndex=0,geometryIndex=0,lifeIndex=0,sudokuIndex=0;
+      const storageKey='iLoveMathProgressV3';let learning={total:0,correct:0,points:{}};
+      try{const saved=JSON.parse(localStorage.getItem(storageKey)||'null');if(saved&&saved.points)learning=saved}catch(e){}
+      let score=learning.correct,mathAnswer=13,currentMath=null,demoIndex=0,demoStep=0,demoTimer=null,logicIndex=0,geometryIndex=0,lifeIndex=0,sudokuIndex=0;
       const $=id=>document.getElementById(id);
+      const praise=['答对啦！你的数学雷达真灵敏！','太棒了！你发现了关键线索！','成功通关！给聪明的你点赞！','回答正确！小脑筋闪闪发光！'];
+      const encourage=['没关系，答错是在帮我们找到进步方向。','已经很接近啦！看懂提示，下次一定能行。','勇敢尝试就是胜利，再练一次会更棒。','好问题！我们发现了一个可以升级的地方。'];
+      const moduleNames={practice:'口算海湾',logic:'密码森林',geometry:'图形太空站',life:'熊猫市集',sudoku:'数字侦探局'};
+      const moduleIcons={practice:'🐳',logic:'🦉',geometry:'🧩',life:'🐼',sudoku:'🕵️'};
       const logicQuestions=[
         {prompt:'小火车下一节车厢里是什么数字？',sequence:['2','4','6','?'],answer:'8',choices:['7','8','9'],hint:'每次都多 2。'},
         {prompt:'数一数，下一个数字是什么？',sequence:['1','3','5','?'],answer:'7',choices:['6','7','8'],hint:'这是单数队伍，每次多 2。'},
@@ -135,30 +158,100 @@
         {op:'subtract',a:13,b:5,label:'13 − 5'},{op:'subtract',a:15,b:7,label:'15 − 7'},{op:'subtract',a:12,b:4,label:'12 − 4'}
       ];
 
-      function updateStars(){const progress=Math.min(score,5);document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('on',i<progress));$('mission').classList.toggle('complete',score>=5);$('missionIcon').textContent=score>=5?'🌈':'🚀';$('missionTitle').textContent=score>=5?'彩虹徽章点亮啦！':'数学星球探险';$('missionText').textContent=score>=5?'继续挑战，看看还能发现多少秘密。':`再答对 ${5-progress} 题，就能点亮彩虹徽章。`}
+      ['递增规律','奇数规律','递减规律','交替规律','周期规律','交替规律','奇偶分类','分类判断','比较大小','排序与中间量','位置关系','对应计数'].forEach((kp,i)=>logicQuestions[i].kp=kp);
+      logicQuestions.push(
+        {prompt:'按规律，宝箱里应放几颗星？',sequence:['⭐','⭐⭐','⭐⭐⭐','?'],answer:'⭐⭐⭐⭐',choices:['⭐⭐','⭐⭐⭐','⭐⭐⭐⭐'],kp:'数量递增',hint:'每一组都比前一组多 1 颗星。'},
+        {prompt:'小熊比小兔高，小兔比小猫高，谁最高？',sequence:['🐻 > 🐰','🐰 > 🐱'],answer:'小熊',choices:['小熊','小兔','小猫'],kp:'传递推理',hint:'小熊高于小兔，小兔又高于小猫。'},
+        {prompt:'三个数字合起来是 10，问号是几？',sequence:['2','3','?','=10'],answer:'5',choices:['4','5','6'],kp:'整体与部分',hint:'2 + 3 = 5，还差 5 才到 10。'},
+        {prompt:'每个盘子放 2 个苹果，3 个盘子要几个？',sequence:['🍽️🍎🍎','×3'],answer:'6',choices:['5','6','8'],kp:'重复加法',hint:'2 + 2 + 2 = 6。'},
+        {prompt:'哪一个图形应该排在最后？',sequence:['○','△','□','○','△','?'],answer:'□',choices:['○','△','□'],kp:'三项周期',hint:'圆、三角、正方形三个一组重复。'},
+        {prompt:'如果今天下雨就带伞。今天下雨了，要带什么？',sequence:['🌧️','→','?'],answer:'雨伞',choices:['帽子','雨伞','球'],kp:'条件推理',hint:'满足下雨的条件，就要带雨伞。'},
+        {prompt:'4 个小朋友每人一把勺子，需要几把？',sequence:['🧒🧒🧒🧒','🥄?'],answer:'4',choices:['3','4','5'],kp:'一一对应',hint:'一个小朋友配一把勺子。'},
+        {prompt:'哪一个数最接近 10？',sequence:['6','9','13'],answer:'9',choices:['6','9','13'],kp:'估计与接近',hint:'9 只差 1 就到 10。'},
+        {prompt:'袋里只有红球和黄球，拿出的不是红球，那是什么？',sequence:['🔴或🟡','不是🔴'],answer:'黄球',choices:['红球','黄球','蓝球'],kp:'排除法',hint:'只有两种可能，排除红球就剩黄球。'},
+        {prompt:'先向前走 2 格，再向后走 1 格，实际前进几格？',sequence:['起点','→→','←'],answer:'1格',choices:['1格','2格','3格'],kp:'方向合成',hint:'前进 2 格又退 1 格，实际前进 1 格。'}
+      );
+      ['三角形特征','正方形特征','旋转半圈','左右位置','平面与立体','镜面对称','图形拼组','图形补全'].forEach((kp,i)=>geometryQuestions[i].kp=kp);
+      geometryQuestions.push(
+        {prompt:'圆柱形积木最像生活中的什么？',sequence:['圆柱','≈','?'],answer:'易拉罐',choices:['易拉罐','三角尺','手帕'],kp:'立体图形对应',hint:'易拉罐的形状接近圆柱。'},
+        {prompt:'从上面看小圆柱，看到的像什么？',sequence:['圆柱','从上看','?'],answer:'圆形',choices:['圆形','三角形','长方形'],kp:'观察方向',hint:'圆柱的上面是圆形。'},
+        {prompt:'正方形沿中线对折，两边会怎样？',sequence:['□','对折'],answer:'完全重合',choices:['完全重合','一大一小','变成圆'],kp:'轴对称',hint:'沿中线对折，两边能完全重合。'},
+        {prompt:'机器人先向右，再向上，最后在哪里？',sequence:['🤖','→','↑'],answer:'右上方',choices:['左上方','右上方','右下方'],kp:'方位合成',hint:'先到右边，再向上，所以在右上方。'},
+        {prompt:'哪个图形滚起来最顺？',sequence:['球','正方体','长方体'],answer:'球',choices:['球','正方体','长方体'],kp:'立体图形运动',hint:'球的表面弯曲，最容易滚动。'},
+        {prompt:'一个正方形剪掉一个角，最多变成几边形？',sequence:['□','剪一角','?'],answer:'5边形',choices:['3边形','4边形','5边形'],kp:'图形变化',hint:'剪掉一个角，会多出一条新边。'},
+        {prompt:'哪条路线最短？',sequence:['直线','弯线','绕圈'],answer:'直线',choices:['直线','弯线','绕圈'],kp:'路径长短',hint:'两点之间直线最短。'},
+        {prompt:'长方形有几个直角？',sequence:['▭'],answer:'4个',choices:['2个','3个','4个'],kp:'直角感知',hint:'长方形的四个角都是直角。'}
+      );
+      ['合并问题','人民币找剩','认识整时','长度比较','序数与数量','平均分','星期顺序','两步加减'].forEach((kp,i)=>lifeQuestions[i].kp=kp);
+      lifeQuestions.push(
+        {prompt:'一盒彩笔 6 元，两盒一共多少元？',sequence:['6元','+','6元'],answer:'12元',choices:['10元','12元','16元'],kp:'相同数相加',hint:'6 + 6 = 12。'},
+        {prompt:'妈妈 5 点下班，过 1 小时是几点？',sequence:['5点','+1小时'],answer:'6点',choices:['5点','6点','7点'],kp:'经过时间',hint:'时针向后走一格，就是 6 点。'},
+        {prompt:'水杯装满后倒掉一半，水会怎样？',sequence:['满杯','倒掉一半'],answer:'剩半杯',choices:['还是满杯','剩半杯','空杯'],kp:'一半概念',hint:'平均分成两份，倒掉一份就剩一半。'},
+        {prompt:'小明有 7 朵花，小红有 5 朵，小明多几朵？',sequence:['7朵','比','5朵'],answer:'2朵',choices:['1朵','2朵','3朵'],kp:'求相差',hint:'求多多少，用减法：7 − 5 = 2。'},
+        {prompt:'4 人围桌，每人需要 1 双筷子，共要几双？',sequence:['🧒×4','🥢?'],answer:'4双',choices:['2双','4双','8双'],kp:'一一对应',hint:'每人一双，4 人需要 4 双。'},
+        {prompt:'袋里有 3 个红球和 6 个蓝球，哪种更多？',sequence:['🔴×3','🔵×6'],answer:'蓝球',choices:['红球','蓝球','一样多'],kp:'数量比较',hint:'6 比 3 大，所以蓝球更多。'},
+        {prompt:'一根绳长 10 米，剪去 2 米，剩多少米？',sequence:['10米','−','2米'],answer:'8米',choices:['7米','8米','12米'],kp:'带单位减法',hint:'10 − 2 = 8，别忘了单位“米”。'},
+        {prompt:'早上先刷牙还是先睡觉？',sequence:['早晨','?'],answer:'刷牙',choices:['刷牙','睡觉','吃晚饭'],kp:'时间先后',hint:'刷牙是早晨常做的事，睡觉通常在晚上。'}
+      );
+      ['行排除','行内缺数','列排除','行列联合'].forEach((kp,i)=>sudokuPuzzles[i].kp=kp);
+      sudokuPuzzles.forEach((q,i)=>q.clue=['最后一行已有 4、3、2，还缺哪个数字？','第一行需要凑齐 1、2、3、4。','观察第三列，已经有 3、4、2。','先看第三行，再用第四列检查。'][i]);
+      sudokuPuzzles.push(
+        {grid:[0,2,3,4,3,4,1,2,2,1,4,3,4,3,2,1],answer:1,choices:[1,2,4],kp:'首格判断',clue:'第一行已有 2、3、4。'},
+        {grid:[1,2,3,4,3,4,1,2,2,0,4,3,4,3,2,1],answer:1,choices:[1,2,3],kp:'横竖核对',clue:'第三行缺一个数，再看看第二列。'},
+        {grid:[1,2,3,4,3,4,1,0,2,1,4,3,4,3,2,1],answer:2,choices:[1,2,4],kp:'宫格规则',clue:'第二行要把 1、2、3、4 各放一次。'},
+        {grid:[1,2,0,4,3,4,1,2,2,1,4,3,4,3,2,1],answer:3,choices:[2,3,4],kp:'唯一可能',clue:'第一行只有一个数字没有出现。'}
+      );
+
+      function saveLearning(){try{localStorage.setItem(storageKey,JSON.stringify(learning))}catch(e){}}
+      function updateStars(){
+        const round=learning.total%10;$('roundText').textContent=`十题闯关 · ${round} / 10`;$('stars').innerHTML='';
+        for(let i=0;i<10;i++){const s=document.createElement('span');s.className=`star${i<round?' on':''}`;s.textContent='★';$('stars').appendChild(s)}
+        $('mission').classList.toggle('complete',round>=5);
+        if(round===0&&learning.total>0){$('missionIcon').textContent='🏅';$('missionTitle').textContent='新一轮探险开始啦！';$('missionText').textContent='刚刚完成了十题挑战，继续收集知识星星吧。'}
+        else if(round>=5){$('missionIcon').textContent='🌈';$('missionTitle').textContent='五题徽章已点亮！';$('missionText').textContent=`再完成 ${10-round} 题，就会有一场撒花庆典。`}
+        else{$('missionIcon').textContent='🚀';$('missionTitle').textContent='数学星球探险';$('missionText').textContent=`再完成 ${5-round} 题，就能收到第一份惊喜。`}
+      }
+      function recordAnswer(kp,module,correct){
+        learning.total++;if(correct)learning.correct++;if(!learning.points[kp])learning.points[kp]={attempts:0,correct:0,module};learning.points[kp].attempts++;if(correct)learning.points[kp].correct++;score=learning.correct;saveLearning();updateStars();renderReport();
+        if(learning.total%10===0)showCelebration(10);else if(learning.total%5===0)showCelebration(5);
+      }
+      function showCelebration(count){
+        $('celebrateEmoji').textContent=count===10?'🎉':'🌸';$('celebrateTitle').textContent=count===10?'十题闯关成功！':'完成五题啦！';$('celebrateText').textContent=count===10?'太厉害了！认真、坚持、会思考，这三颗成长星都送给你！':'走到一半也值得庆祝，给坚持思考的你撒一把小花！';$('flowerField').innerHTML='';
+        const flowers=['🌸','🌼','✨','🎉','⭐','💫'];for(let i=0;i<(count===10?42:24);i++){const f=document.createElement('span');f.className='flower';f.textContent=flowers[i%flowers.length];f.style.left=`${Math.random()*96}vw`;f.style.animationDelay=`${Math.random()*1.2}s`;f.style.animationDuration=`${2.4+Math.random()*1.7}s`;$('flowerField').appendChild(f)}$('celebration').hidden=false;setTimeout(()=>{$('celebration').hidden=true},5200);
+      }
+      $('closeCelebration').onclick=()=>{$('celebration').hidden=true};
       function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
       function makeQuestion(){
-        const add=Math.random()>.45;let a,b,answer;
+        const add=Math.random()>.45;let a,b,answer,kp,hint;
         if(add){a=Math.floor(Math.random()*11)+3;b=Math.floor(Math.random()*(21-a));answer=a+b}else{a=Math.floor(Math.random()*16)+5;b=Math.floor(Math.random()*(a+1));answer=a-b}
+        if(add&&b===0){kp='0的加法';hint='加上 0，原来的数量不会改变。'}
+        else if(add&&answer<=10){kp='10以内加法';hint=`从 ${a} 往后数 ${b} 个，就能找到答案。`}
+        else if(add&&a<10&&b<10){kp='20以内进位加法';hint=`${a} 离 10 还差 ${10-a}，可以先凑成 10。`}
+        else if(add){kp='20以内不进位加法';hint='先算个位，再带上前面的 10。'}
+        else if(b===0){kp='0的减法';hint='一个也不拿走，数量不会改变。'}
+        else if(a<=10){kp='10以内减法';hint=`从 ${a} 倒着数 ${b} 步。`}
+        else if(answer<10){kp='20以内退位减法';hint=`先把 ${a} 减到 10，再减剩下的数。`}
+        else{kp='20以内不退位减法';hint='个位直接相减，十位不变。'}
         const wrong=new Set();while(wrong.size<3){let v=Math.max(0,Math.min(20,answer+(Math.floor(Math.random()*7)-3||1)));if(v!==answer)wrong.add(v)}
-        return{text:`${a} ${add?'+':'−'} ${b}`,answer,choices:shuffle([answer,...wrong])};
+        return{text:`${a} ${add?'+':'−'} ${b}`,answer,choices:shuffle([answer,...wrong]),kp,hint};
       }
-      function renderMath(q={text:'8 + 5',answer:13,choices:[11,12,13,14]}){
-        mathAnswer=q.answer;$('equation').innerHTML=`<span>${q.text}</span><b>=</b><span class="answer-box">?</span>`;$('answers').innerHTML='';$('mathFeedback').textContent='点一点你认为正确的数字';
+      function renderMath(q={text:'8 + 5',answer:13,choices:[11,12,13,14],kp:'20以内进位加法',hint:'8 离 10 还差 2，可以先凑成 10。'}){
+        currentMath=q;mathAnswer=q.answer;$('mathKp').textContent=`⭐ ${q.kp}`;$('equation').innerHTML=`<span>${q.text}</span><b>=</b><span class="answer-box">?</span>`;$('answers').innerHTML='';$('mathFeedback').textContent='点一点正确答案，帮助小鲸鱼穿过浪花。';
         q.choices.forEach(value=>{const b=document.createElement('button');b.className='answer';b.textContent=value;b.onclick=()=>answerMath(b,value);$('answers').appendChild(b)});
       }
       function answerMath(button,value){
         const buttons=[...$('answers').children];if(buttons.some(b=>b.disabled))return;buttons.forEach(b=>{b.disabled=true;if(Number(b.textContent)===mathAnswer)b.classList.add('correct')});
-        if(value===mathAnswer){score++;updateStars();$('mathFeedback').innerHTML='<strong>答对啦！你真棒！ 🎉</strong>'}else{button.classList.add('wrong');$('mathFeedback').innerHTML=`<strong class="bad">再想一想，正确答案是 ${mathAnswer}</strong>`}
+        const correct=value===mathAnswer;if(!correct)button.classList.add('wrong');recordAnswer(currentMath.kp,'practice',correct);$('mathFeedback').innerHTML=`<strong class="${correct?'':'bad'}">${correct?praise[Math.floor(Math.random()*praise.length)]:encourage[Math.floor(Math.random()*encourage.length)]}</strong><small style="width:100%">${currentMath.hint} 正确答案是 ${mathAnswer}。</small>`;
         const next=document.createElement('button');next.className='next';next.textContent='下一题 →';next.onclick=()=>renderMath(makeQuestion());$('mathFeedback').appendChild(next);
       }
-      document.querySelectorAll('.tab').forEach(tab=>tab.onclick=()=>{document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected','false'));tab.setAttribute('aria-selected','true');document.querySelectorAll('.panel').forEach(p=>p.hidden=true);$(tab.dataset.tab).hidden=false});
+      function switchTab(id){document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.tab===id)));document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==id);if(id==='report')renderReport();window.scrollTo({top:120,behavior:'smooth'})}
+      document.querySelectorAll('.tab').forEach(tab=>tab.onclick=()=>switchTab(tab.dataset.tab));
 
       function frame(element,count,color,moved){element.innerHTML='';for(let i=0;i<10;i++){const c=document.createElement('span');c.className='cell';if(i<count)c.classList.add('filled',i>=count-moved?'moved':color);element.appendChild(c)}}
       function renderDemo(){
         const d=demoExamples[demoIndex],add=d.op==='add',bridge=add?10-d.a:d.a-10,rest=d.b-bridge,result=add?d.a+d.b:d.a-d.b;
         const copy=add?[[`${d.label}，怎样算得又快又准？`,`先观察：${d.a} 离 10 还差 ${bridge}。`],[`把 ${d.b} 分成 ${bridge} 和 ${rest}`,`借出 ${bridge} 个黄色圆点，准备送给 ${d.a}。`],[`${d.a} + ${bridge} = 10`,'黄色圆点搬过去，第一框正好装满 10 个。'],[`10 + ${rest} = ${result}`,`十个一组，再加剩下的 ${rest}，答案是 ${result}！`]]:[[`${d.label}，怎样算更清楚？`,`把 ${d.a} 看成 10 和 ${bridge}。`],[`把 ${d.b} 分成 ${bridge} 和 ${rest}`,`先减去零散的 ${bridge}，还要再减 ${rest}。`],[`${d.a} − ${bridge} = 10`,`先减掉 ${bridge}，正好回到 10。`],[`10 − ${rest} = ${result}`,`再从 10 里减 ${rest}，答案是 ${result}！`]];
-        $('demoHeading').textContent=`${add?'凑十加法':'破十减法'}：${d.label}`;$('frameOneLabel').textContent=add?`先放 ${d.a} 个`:'先摆出 10 个';$('frameTwoLabel').textContent=add?`再放 ${d.b} 个`:`再摆 ${bridge} 个`;
+        $('demoKp').textContent=`⭐ ${add?'凑十法：拆小数凑整十':'破十法：先减到10'}`;$('demoHeading').textContent=`${add?'凑十加法':'破十减法'}：${d.label}`;$('frameOneLabel').textContent=add?`先放 ${d.a} 个`:'先摆出 10 个';$('frameTwoLabel').textContent=add?`再放 ${d.b} 个`:`再摆 ${bridge} 个`;
         frame($('frameOne'),add?(demoStep>=2?10:d.a):(demoStep>=3?result:10),'blue',add&&demoStep>=2?bridge:0);frame($('frameTwo'),add?(demoStep>=2?rest:d.b):(demoStep>=2?0:bridge),'yellow',0);
         $('moveArrow').textContent=add?`← ${bridge} 个`:`减 ${bridge} 个 →`;$('moveArrow').classList.toggle('subtract',!add);$('moveArrow').classList.toggle('show',demoStep>=1);$('stepCount').textContent=`第 ${demoStep+1} 步`;$('demoTitle').textContent=copy[demoStep][0];$('demoText').textContent=copy[demoStep][1];$('stepDots').innerHTML=[0,1,2,3].map(i=>`<i class="${i<=demoStep?'on':''}"></i>`).join('');$('nextStep').style.display=demoStep<3?'inline-block':'none';$('playDemo').textContent=demoStep===3?'↻ 再看一次':'▶ 播放动画';
       }
@@ -167,34 +260,45 @@
       $('playDemo').onclick=()=>{clearTimeout(demoTimer);demoStep=0;renderDemo();$('playDemo').disabled=true;const advance=()=>{if(demoStep<3){demoStep++;renderDemo();demoTimer=setTimeout(advance,1350)}else $('playDemo').disabled=false};demoTimer=setTimeout(advance,1350)};
 
       function renderLogic(){
-        const q=logicQuestions[logicIndex];$('logicPrompt').textContent=q.prompt;$('sequence').innerHTML=q.sequence.map(v=>`<span class="${v==='?'?'mystery':''}">${v}</span>`).join('');$('logicOptions').innerHTML='';$('logicFeedback').textContent='✨ 找找藏起来的规律';
+        const q=logicQuestions[logicIndex];$('logicPrompt').textContent=q.prompt;$('logicKp').textContent=`⭐ ${q.kp}`;$('sequence').innerHTML=q.sequence.map(v=>`<span class="${v==='?'?'mystery':''}">${v}</span>`).join('');$('logicOptions').innerHTML='';$('logicFeedback').textContent='✨ 找规律、比一比、想一想，破解猫头鹰密码。';
         q.choices.forEach(value=>{const b=document.createElement('button');b.className='logic-choice';b.textContent=value;b.onclick=()=>answerLogic(b,value,q);$('logicOptions').appendChild(b)});
       }
       function answerLogic(button,value,q){
-        const buttons=[...$('logicOptions').children];if(buttons.some(b=>b.disabled))return;buttons.forEach(b=>{b.disabled=true;if(b.textContent===q.answer)b.classList.add('correct')});if(value!==q.answer)button.classList.add('wrong');else{score++;updateStars()}
-        $('logicFeedback').innerHTML=`<strong>${value===q.answer?'发现规律啦！':'没关系，一起看看规律：'}</strong><p>${q.hint}</p>`;const next=document.createElement('button');next.className='next';next.textContent='换一题 ↻';next.onclick=()=>{logicIndex=(logicIndex+1)%logicQuestions.length;renderLogic()};$('logicFeedback').appendChild(next);
+        const buttons=[...$('logicOptions').children];if(buttons.some(b=>b.disabled))return;buttons.forEach(b=>{b.disabled=true;if(b.textContent===q.answer)b.classList.add('correct')});const correct=value===q.answer;if(!correct)button.classList.add('wrong');recordAnswer(q.kp,'logic',correct);
+        $('logicFeedback').innerHTML=`<strong class="${correct?'':'bad'}">${correct?praise[Math.floor(Math.random()*praise.length)]:encourage[Math.floor(Math.random()*encourage.length)]}</strong><p>${q.hint}</p><small>本题只考查：${q.kp}</small>`;const next=document.createElement('button');next.className='next';next.textContent='继续探险 ↻';next.onclick=()=>{logicIndex=(logicIndex+1)%logicQuestions.length;renderLogic()};$('logicFeedback').appendChild(next);
       }
       function renderChoice(prefix,q,nextAction){
-        $(prefix+'Prompt').textContent=q.prompt;$(prefix+'Sequence').innerHTML=q.sequence.map(v=>`<span class="${v==='?'?'mystery':''}">${v}</span>`).join('');$(prefix+'Options').innerHTML='';$(prefix+'Feedback').textContent=prefix==='geometry'?'✨ 观察形状和方向':'✨ 用数学解决生活问题';
+        $(prefix+'Prompt').textContent=q.prompt;$(prefix+'Kp').textContent=`⭐ ${q.kp}`;$(prefix+'Sequence').innerHTML=q.sequence.map(v=>`<span class="${v==='?'?'mystery':''}">${v}</span>`).join('');$(prefix+'Options').innerHTML='';$(prefix+'Feedback').textContent=prefix==='geometry'?'✨ 观察边、角、方向和位置，修好太空站。':'✨ 帮熊猫店长解决一个真实的小问题。';
         q.choices.forEach(value=>{const b=document.createElement('button');b.className='logic-choice';b.textContent=value;b.onclick=()=>answerChoice(prefix,b,value,q,nextAction);$(prefix+'Options').appendChild(b)});
       }
       function answerChoice(prefix,button,value,q,nextAction){
-        const buttons=[...$(prefix+'Options').children];if(buttons.some(b=>b.disabled))return;buttons.forEach(b=>{b.disabled=true;if(b.textContent===q.answer)b.classList.add('correct')});if(value!==q.answer)button.classList.add('wrong');else{score++;updateStars()}
-        $(prefix+'Feedback').innerHTML=`<strong>${value===q.answer?'发现答案啦！':'没关系，一起看看：'}</strong><p>${q.hint}</p>`;const next=document.createElement('button');next.className='next';next.textContent='换一题 ↻';next.onclick=nextAction;$(prefix+'Feedback').appendChild(next);
+        const buttons=[...$(prefix+'Options').children];if(buttons.some(b=>b.disabled))return;buttons.forEach(b=>{b.disabled=true;if(b.textContent===q.answer)b.classList.add('correct')});const correct=value===q.answer;if(!correct)button.classList.add('wrong');recordAnswer(q.kp,prefix,correct);
+        $(prefix+'Feedback').innerHTML=`<strong class="${correct?'':'bad'}">${correct?praise[Math.floor(Math.random()*praise.length)]:encourage[Math.floor(Math.random()*encourage.length)]}</strong><p>${q.hint}</p><small>本题只考查：${q.kp}</small>`;const next=document.createElement('button');next.className='next';next.textContent='继续探险 ↻';next.onclick=nextAction;$(prefix+'Feedback').appendChild(next);
       }
       function renderGeometry(){renderChoice('geometry',geometryQuestions[geometryIndex],()=>{geometryIndex=(geometryIndex+1)%geometryQuestions.length;renderGeometry()})}
       function renderLife(){renderChoice('life',lifeQuestions[lifeIndex],()=>{lifeIndex=(lifeIndex+1)%lifeQuestions.length;renderLife()})}
       function renderSudoku(){
-        const q=sudokuPuzzles[sudokuIndex];$('sudokuGrid').innerHTML=q.grid.map(v=>`<span class="${v===0?'blank':''}">${v||'?'}</span>`).join('');$('sudokuOptions').innerHTML='';$('sudokuFeedback').textContent='✨ 找出缺少的数字';
+        const q=sudokuPuzzles[sudokuIndex];$('sudokuKp').textContent=`⭐ ${q.kp}`;$('sudokuClue').textContent=q.clue;$('sudokuGrid').innerHTML=q.grid.map(v=>`<span class="${v===0?'blank':''}">${v||'?'}</span>`).join('');$('sudokuOptions').innerHTML='';$('sudokuFeedback').textContent='✨ 用排除法找出唯一答案。';
         q.choices.forEach(value=>{const b=document.createElement('button');b.className='logic-choice';b.textContent=value;b.onclick=()=>answerSudoku(b,value,q);$('sudokuOptions').appendChild(b)});
       }
       function answerSudoku(button,value,q){
-        const buttons=[...$('sudokuOptions').children];if(buttons.some(b=>b.disabled))return;buttons.forEach(b=>{b.disabled=true;if(Number(b.textContent)===q.answer)b.classList.add('correct')});if(value!==q.answer)button.classList.add('wrong');else{score++;updateStars()}
-        $('sudokuFeedback').innerHTML=`<strong>${value===q.answer?'破案成功！':`正确答案是 ${q.answer}`}</strong>`;const next=document.createElement('button');next.className='next';next.textContent='下一关 ↻';next.onclick=()=>{sudokuIndex=(sudokuIndex+1)%sudokuPuzzles.length;renderSudoku()};$('sudokuFeedback').appendChild(next);
+        const buttons=[...$('sudokuOptions').children];if(buttons.some(b=>b.disabled))return;buttons.forEach(b=>{b.disabled=true;if(Number(b.textContent)===q.answer)b.classList.add('correct')});const correct=value===q.answer;if(!correct)button.classList.add('wrong');recordAnswer(q.kp,'sudoku',correct);
+        $('sudokuFeedback').innerHTML=`<strong class="${correct?'':'bad'}">${correct?'侦探破案成功！':encourage[Math.floor(Math.random()*encourage.length)]}</strong><p>${q.clue} 正确答案是 ${q.answer}。</p><small>本题只考查：${q.kp}</small>`;const next=document.createElement('button');next.className='next';next.textContent='下一桩案件 ↻';next.onclick=()=>{sudokuIndex=(sudokuIndex+1)%sudokuPuzzles.length;renderSudoku()};$('sudokuFeedback').appendChild(next);
       }
-      renderMath();renderDemo();renderLogic();renderGeometry();renderLife();renderSudoku();updateStars();
+      function statusFor(p){if(!p||!p.attempts)return{key:'new',label:'未检测'};const rate=p.correct/p.attempts;if(p.attempts>=2&&rate>=.8)return{key:'master',label:'已掌握'};if(rate<.6)return{key:'review',label:'建议复习'};return{key:'growing',label:'成长中'}}
+      function allKnowledge(){
+        const groups={practice:['0的加法','10以内加法','20以内进位加法','20以内不进位加法','0的减法','10以内减法','20以内退位减法','20以内不退位减法'],logic:[],geometry:[],life:[],sudoku:[]};
+        logicQuestions.forEach(q=>{if(!groups.logic.includes(q.kp))groups.logic.push(q.kp)});geometryQuestions.forEach(q=>{if(!groups.geometry.includes(q.kp))groups.geometry.push(q.kp)});lifeQuestions.forEach(q=>{if(!groups.life.includes(q.kp))groups.life.push(q.kp)});sudokuPuzzles.forEach(q=>{if(!groups.sudoku.includes(q.kp))groups.sudoku.push(q.kp)});return groups;
+      }
+      function renderReport(){
+        if(!$('reportBody'))return;if(learning.total===0){$('reportBody').innerHTML='<div class="empty-report">🌱 还没有体检记录<br><br>先去完成几道题，这里会自动生成知识点报告。</div>';return}
+        let mastered=0;const review=[];Object.keys(learning.points).forEach(kp=>{const s=statusFor(learning.points[kp]);if(s.key==='master')mastered++;if(s.key==='review')review.push({kp,module:learning.points[kp].module})});
+        const rate=Math.round(learning.correct/learning.total*100);let html=`<div class="report-intro"><div class="report-stat"><b>${learning.total}</b><span>累计完成</span></div><div class="report-stat"><b>${rate}%</b><span>整体正确率</span></div><div class="report-stat"><b>${mastered}</b><span>稳定掌握</span></div></div><div class="diagnosis"><h3>🩺 本次诊断</h3><p>${review.length?`发现 ${review.length} 个值得再练一练的知识点。答错不可怕，它在告诉我们下一步往哪里走。`:'目前没有明显薄弱点，继续多做几题，报告会越来越准确。'}</p>`;
+        review.slice(0,4).forEach(item=>{html+=`<button class="report-go" data-go="${item.module}">练习 ${item.kp}</button>`});html+='</div><div class="knowledge-groups">';
+        const groups=allKnowledge();Object.keys(groups).forEach(module=>{html+=`<section class="knowledge-group"><h3>${moduleIcons[module]} ${moduleNames[module]}</h3><div class="knowledge-grid">`;groups[module].forEach(kp=>{const p=learning.points[kp],s=statusFor(p),detail=p?`${p.correct} / ${p.attempts} 次答对`:'做题后生成评价';html+=`<div class="knowledge-card status-${s.key}"><strong>${kp}</strong><span>${s.label}</span><small>${detail}</small></div>`});html+='</div></section>'});html+='</div>';$('reportBody').innerHTML=html;document.querySelectorAll('.report-go').forEach(b=>b.onclick=()=>switchTab(b.dataset.go));
+      }
+      renderMath();renderDemo();renderLogic();renderGeometry();renderLife();renderSudoku();renderReport();updateStars();
     })();
   </script>
 </body>
 </html>
-
