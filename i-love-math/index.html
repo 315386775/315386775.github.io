@@ -635,6 +635,225 @@
         {title:'用相反运算检查',text:'加法可以用减法检查，减法可以用加法检查。例如8＋5＝13，就检查13－5是不是8。',visual:'<div class="number-bond"><span>8＋5</span><b>↔</b><span>13－5</span><b>＝</b><span>8</span></div>'}
       ];
 
+      /* 第二批能力题库：每组围绕不同能力生成多种情境，避免只换数字不换思路。 */
+      const addQuestion=(list,prompt,sequence,answer,choices,kp,hint,age)=>list.push({prompt,sequence,answer,choices,kp,hint,age});
+      const numberChoices=(answer,unit='')=>[`${Math.max(0,answer-1)}${unit}`,`${answer}${unit}`,`${answer+1}${unit}`];
+
+      const curatedMathQuestions=[
+        {text:'5 + 5',answer:10,choices:[8,9,10,11],kp:'相同数相加',hint:'两份5合起来就是10。',age:6,visualText:'摆两排同样多的5个圆点，配成一对一对后共有10个。',check:'从10拿走一排5个，还剩5个。'},
+        {text:'9 + 1',answer:10,choices:[8,9,10,11],kp:'补1成十',hint:'9再添1，正好组成10。',age:6,visualText:'十格框已经有9个，只差最后1格。',check:'10－1＝9。'},
+        {text:'8 − 8',answer:0,choices:[0,1,7,8],kp:'减去全部',hint:'8个全部拿走，一个也不剩。',age:6,visualText:'把8个圆点全部划掉，空盘子里是0个。',check:'0＋8＝8。'},
+        {text:'4 + 0',answer:4,choices:[0,3,4,5],kp:'加零不变',hint:'没有添进新的，数量还是4。',age:6,visualText:'盘里有4个，空篮子没有带来任何东西。',check:'4－0＝4。'},
+        {text:'7 − 1',answer:6,choices:[5,6,7,8],kp:'相邻数减一',hint:'从7倒数一个数就是6。',age:6,visualText:'数轴从7向左走1格到6。',check:'6＋1＝7。'},
+        {text:'3 + 6',answer:9,choices:[7,8,9,10],kp:'交换加数结果不变',hint:'3＋6和6＋3的结果一样。',age:6,visualText:'把3个和6个合在一起，先数哪一组都共有9个。',check:'9－6＝3。'},
+        {text:'10 − 6',answer:4,choices:[3,4,5,6],kp:'十的分与合',hint:'6和4是一对合成10的好朋友。',age:6,visualText:'十格框遮住6格，还能看到4格。',check:'4＋6＝10。'},
+        {text:'2 + 2 + 2',answer:6,choices:[4,5,6,8],kp:'三个相同加数',hint:'三个2依次相加：2＋2＝4，4＋2＝6。',age:6,visualText:'三只小盘子各放2颗糖，一共6颗。',check:'6可以平均分成三份，每份2。'},
+        {text:'8 + 7',answer:15,choices:[13,14,15,16],kp:'凑十后加剩余',hint:'从7里分2给8凑成10，还剩5。',age:7,visualText:'8＋2先变10，再加剩下的5得到15。',check:'15－7＝8。'},
+        {text:'13 − 6',answer:7,choices:[6,7,8,9],kp:'破十后继续减',hint:'13先减3到10，还要再减3。',age:7,visualText:'13拆成10和3，先用3抵消一部分，再算10－3。',check:'7＋6＝13。'},
+        {text:'6 + 6 + 1',answer:13,choices:[11,12,13,14],kp:'双数加一',hint:'先算熟悉的6＋6＝12，再加1。',age:7,visualText:'两排6个正好12个，再添1个就是13个。',check:'13－1＝12，12正好是6＋6。'},
+        {text:'9 + 8',answer:17,choices:[15,16,17,18],kp:'两边都接近十',hint:'把8分成1和7，9＋1＝10。',age:7,visualText:'给9补1成10，剩7，合起来17。',check:'17－9＝8。'},
+        {text:'16 − 7',answer:9,choices:[8,9,10,11],kp:'退位减法补偿',hint:'先算16－6＝10，再多减1。',age:7,visualText:'从16拿走6到10，再拿走1到9。',check:'9＋7＝16。'},
+        {text:'12 + 5',answer:17,choices:[15,16,17,18],kp:'十加个位数',hint:'个位2＋5＝7，再带上前面的1个十。',age:7,visualText:'1捆十根小棒不动，零散的2根再加5根。',check:'17－5＝12。'},
+        {text:'19 − 9',answer:10,choices:[9,10,11,12],kp:'去掉个位保留整十',hint:'19里面去掉9个一，正好剩1个十。',age:7,visualText:'一捆十根和9根散棒，拿走全部散棒。',check:'10＋9＝19。'},
+        {text:'7 + 4 − 1',answer:10,choices:[9,10,11,12],kp:'两步巧算凑整',hint:'4－1可以先看成3，7＋3＝10。',age:7,visualText:'添4个又拿走1个，相当于只添3个。',check:'按顺序算7＋4＝11，11－1＝10。'},
+        {text:'6 + 8 − 4',answer:10,choices:[8,9,10,11],kp:'加减抵消',hint:'8里面有4＋4，加8再减4相当于加4。',age:8,visualText:'把后来减掉的4和8中的4配对消去，只剩6＋4。',check:'顺算6＋8＝14，14－4＝10。'},
+        {text:'18 − 5 − 3',answer:10,choices:[9,10,11,12],kp:'连续减法合并',hint:'5和3合起来是8，可以想18－8。',age:8,visualText:'两次一共拿走8个，18剩10。',check:'10＋5＋3＝18。'},
+        {text:'9 + 3 + 1',answer:13,choices:[11,12,13,14],kp:'调整加数先凑十',hint:'先把1和9凑成10，再加3。',age:8,visualText:'交换加数的位置，9＋1＋3更容易。',check:'13－3－1＝9。'},
+        {text:'17 − 8 + 2',answer:11,choices:[9,10,11,12],kp:'先退位再补回',hint:'17－8＝9，再加2＝11。',age:8,visualText:'从17拿走8到9，再添回2到11。',check:'11－2＋8＝17。'},
+        {text:'4 + 7 + 6',answer:17,choices:[15,16,17,18],kp:'找十的朋友重排',hint:'4和6先凑成10，再加7。',age:8,visualText:'三个数可以换顺序，先找合起来是10的一对。',check:'17－7＝10，10正好是4＋6。'},
+        {text:'20 − 7 − 3',answer:10,choices:[9,10,11,13],kp:'从整十连续退减',hint:'7和3合起来是10，20－10＝10。',age:8,visualText:'把两次拿走合成一次拿走10个。',check:'10＋7＋3＝20。'},
+        {text:'15 − 9 + 4',answer:10,choices:[8,9,10,11],kp:'减九补偿法',hint:'减9可以想先减10再加1。',age:8,visualText:'15－10＝5，补回1得6，再加4得10。',check:'10－4＋9＝15。'},
+        {text:'8 + 8 − 6',answer:10,choices:[8,9,10,12],kp:'近双数两步运算',hint:'先算8＋8＝16，再想16去掉6。',age:8,visualText:'两组8合成16，划掉6个后正好剩10个。',check:'10＋6＝16，而16＝8＋8。'}
+      ];
+
+      demoExamples.push(
+        {op:'add',a:7,b:3,label:'7 + 3',age:6},{op:'add',a:8,b:2,label:'8 + 2',age:6},{op:'add',a:6,b:5,label:'6 + 5',age:7},{op:'add',a:7,b:6,label:'7 + 6',age:7},
+        {op:'add',a:8,b:7,label:'8 + 7',age:7},{op:'add',a:9,b:8,label:'9 + 8',age:8},{op:'add',a:7,b:9,label:'7 + 9',age:8},{op:'add',a:6,b:9,label:'6 + 9',age:8},
+        {op:'subtract',a:12,b:2,label:'12 − 2',age:6},{op:'subtract',a:13,b:3,label:'13 − 3',age:6},{op:'subtract',a:11,b:4,label:'11 − 4',age:7},{op:'subtract',a:12,b:7,label:'12 − 7',age:7},
+        {op:'subtract',a:15,b:8,label:'15 − 8',age:7},{op:'subtract',a:16,b:7,label:'16 − 7',age:8},{op:'subtract',a:17,b:8,label:'17 − 8',age:8},{op:'subtract',a:18,b:7,label:'18 − 7',age:8}
+      );
+
+      [[1,3,6],[2,4,7],[3,2,8],[5,3,8],[4,4,8]].forEach(([start,step,age])=>{const a=start,b=a+step,c=b+step,d=c+step;addQuestion(logicQuestions,`每次加${step}向前走，下一个数是几？`,[String(a),String(b),String(c),'?'],String(d),numberChoices(d),`等差递增·每次加${step}`,`相邻两个数都增加${step}，所以${c}＋${step}＝${d}。`,age)});
+      [[20,2,7],[18,3,8],[17,4,8],[15,2,7],[19,5,8]].forEach(([start,step,age])=>{const b=start-step,c=b-step,d=c-step;addQuestion(logicQuestions,`数字每次减${step}倒着走，问号是多少？`,[String(start),String(b),String(c),'?'],String(d),numberChoices(d),`等差递减·每次减${step}`,`每次都减${step}，${c}－${step}＝${d}。`,age)});
+      [
+        ['红黄两色怎样循环？',['🔴','🟡','🟡','🔴','🟡','🟡','?'],'🔴',['🔴','🟡','🔵'],'一二节奏周期','一红两黄为一组，下一组重新从红色开始。',6],
+        ['大小图形怎样交替？',['大○','小○','大△','小△','大□','?'],'小□',['大□','小□','小△'],'大小双重规律','形状圆、三角、方形变化，每种形状都先大后小。',8],
+        ['方向箭头按什么顺序转动？',['↑','→','↓','←','?'],'↑',['↑','→','↓'],'顺时针四方向周期','箭头每次顺时针转90度，转一圈后回到向上。',7],
+        ['图案每组多一个圆，下一组是？',['○△','○○△','○○○△','?'],'○○○○△',['○○△','○○○△','○○○○△'],'组内数量递增','每一组圆形多1个，最后仍放1个三角形。',8],
+        ['颜色和形状同时变化，问号是什么？',['红圆','蓝方','红圆','蓝方','?'],'红圆',['红圆','蓝圆','红方'],'双属性交替','红圆和蓝方整组交替出现。',7]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+      [
+        ['小青比小白快，小白比小黑快，谁最慢？',['青>白','白>黑'],'小黑',['小青','小白','小黑'],'速度传递比较','从快到慢是小青、小白、小黑。',7],
+        ['红绳比蓝绳长，黄绳比蓝绳短，哪根最短？',['红>蓝','黄<蓝'],'黄绳',['红绳','蓝绳','黄绳'],'长短多条件比较','黄绳比蓝绳短，而红绳又比蓝绳长。',8],
+        ['甲的年龄比乙大，丙又比甲大，谁年龄最大？',['丙>甲','甲>乙'],'丙',['甲','乙','丙'],'年龄关系传递','丙比甲大，甲又比乙大，所以丙最大。',7],
+        ['A盒比B盒轻，C盒比A盒轻，谁最重？',['C<A','A<B'],'B盒',['A盒','B盒','C盒'],'反向轻重传递','从轻到重是C、A、B。',8],
+        ['兔子跳得比青蛙远、比袋鼠近，谁跳得最远？',['青蛙<兔子<袋鼠'],'袋鼠',['青蛙','兔子','袋鼠'],'区间关系排序','兔子在中间，袋鼠比兔子还远。',7]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+      [
+        ['7人排队，小海前面4人，他排第几？',['前面4人','小海'],'第5',['第4','第5','第6'],'由前面人数求序数','前面有4人，小海紧接着就是第5。',7],
+        ['6人排队，小云后面2人，她排第几？',['小云','后面2人'],'第4',['第3','第4','第5'],'由后面人数反推序数','总共6人，后面2人，所以她前面还有3人，排第4。',8],
+        ['小鹿从左数第2、从右数第4，队伍共有几只动物？',['左边1只','小鹿','右边3只'],'5只',['4只','5只','6只'],'双向序数求总数','左边1只＋小鹿自己＋右边3只，共5只。',8],
+        ['小明站第3，小刚紧跟在他后面，小刚排第几？',['第3小明','下一位小刚'],'第4',['第2','第3','第4'],'相邻名次推理','第3名后面紧接着是第4名。',6],
+        ['从左数红旗第5，把最左边一面拿走，红旗变第几？',['拿走左边1面','原第5'],'第4',['第4','第5','第6'],'序数变化','前面少了一面，红旗的序数也少1，变第4。',8]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+      [
+        ['魔法机进去4出来9，进去7出来几？',['4→9','7→?'],'12',['10','11','12'],'同一加法规则迁移','4到9是加5，所以7也加5得到12。',7],
+        ['魔法机进去3出来6，进去8出来几？',['3→6','8→?'],'16',['11','14','16'],'翻倍规则迁移','输出是输入的两份，8＋8＝16。',8],
+        ['密码把圆换成2、三角换成5，“圆三角圆”是多少？',['○=2','△=5','○△○'],'252',['225','252','522'],'符号顺序编码','按出现顺序替换成2、5、2。',7],
+        ['箭头表示加2，5→→以后是多少？',['5','→+2','→+2'],'9',['7','9','10'],'重复执行规则','5先加2到7，再加2到9。',7],
+        ['盒子规则是先加3再减1，6出来几？',['6','+3','−1'],'8',['7','8','9'],'复合规则执行','先算6＋3＝9，再算9－1＝8。',8]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+      [
+        ['所有会飞的纸片都是蓝色，这张纸片不是蓝色，它会飞吗？',['会飞→蓝色','不是蓝色'],'不会',['会','不会','不一定'],'条件逆否判断','会飞的一定蓝；不是蓝色就不属于会飞的纸片。',8],
+        ['只有圆盒装糖，方盒里可能有糖吗？',['有糖→圆盒','这是方盒'],'不可能',['可能','不可能','一定有'],'必要条件排除','有糖的盒子必须是圆盒，方盒不符合条件。',8],
+        ['如果穿雨衣就不怕淋湿。小雨穿了雨衣，可以推出什么？',['穿雨衣→不怕淋湿'],'不怕淋湿',['一定下雨','不怕淋湿','没有雨衣'],'条件结论判断','条件已经满足，可以得到后面的结论。',7],
+        ['宝石只可能在甲或乙盒。甲盒是空的，宝石在哪？',['甲或乙','甲空'],'乙盒',['甲盒','乙盒','都不在'],'二选一定位','只有两个可能，排除甲盒就只剩乙盒。',6],
+        ['三扇门只有一扇开着，左门和中门都关着，哪扇开？',['左关','中关','右?'],'右门',['左门','中门','右门'],'三选一排除','三扇门里排除左、中，只剩右门。',6]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+      [
+        ['苹果和梨都是水果，胡萝卜是蔬菜，谁不同类？',['苹果','梨','胡萝卜'],'胡萝卜',['苹果','梨','胡萝卜'],'上位类别分类','苹果和梨同属水果，胡萝卜属于蔬菜。',6],
+        ['小鸟住鸟巢，小鱼住哪里？',['小鸟→鸟巢','小鱼→?'],'水里',['树上','水里','沙漠'],'生活对应类比','根据动物的生活环境，小鱼生活在水里。',6],
+        ['手套和手对应，鞋子和什么对应？',['手套→手','鞋子→?'],'脚',['头','脚','耳朵'],'物品功能类比','手套保护手，鞋子保护脚。',6],
+        ['白天对应太阳，夜晚对应什么？',['白天→太阳','夜晚→?'],'月亮',['雨伞','月亮','铅笔'],'时间景物类比','夜晚最常见的对应景物是月亮。',6],
+        ['医生在医院工作，老师在哪里工作？',['医生→医院','老师→?'],'学校',['学校','车站','菜场'],'职业场所类比','老师通常在学校里教学。',6]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+      [
+        ['两杯水一样多，一杯倒进细高杯后，哪杯水多？',['宽杯一杯','倒入细高杯'],'一样多',['高杯多','宽杯多','一样多'],'容积守恒','只是容器形状变了，水没有增加也没有减少。',7],
+        ['6颗珠子拉开摆得很长，还是几颗？',['●●●●●●','●  ●  ●  ●  ●  ●'],'6颗',['5颗','6颗','更多'],'间距不改变数量','改变间隔不会改变珠子的个数。',6],
+        ['一块饼干掰成两半后，饼干总量变多了吗？',['整块','掰成两半'],'没有变',['变多','变少','没有变'],'整体分割守恒','只是分成两块，总量仍是一整块。',7],
+        ['一排5人换了站位，人数会怎样？',['5人换位置'],'还是5人',['变4人','还是5人','变6人'],'排列不改变总数','换位置不会让人增加或减少。',6],
+        ['同一根绳弯成圆形后，长度会变吗？',['直绳','弯成圆'],'不会变',['变长','变短','不会变'],'形状不改变长度','只改变形状，没有剪断或接长，长度不变。',8]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+      [
+        ['一盏灯按“亮亮灭”循环，第8次是什么？',['亮','亮','灭','亮','亮','灭','亮','?'],'亮',['亮','灭','不确定'],'周期位置求项','三次一组，第7、8次是新一组的前两次，都亮。',8],
+        ['星期一开始每隔一天浇花，星期一、三、五，下一次星期几？',['一','三','五','?'],'星期日',['星期六','星期日','下周一'],'隔日周期','每次往后数两天，星期五后是星期日。',8],
+        ['红蓝绿循环，第10颗珠子什么颜色？',['红','蓝','绿','…','第10'],'红',['红','蓝','绿'],'周期余数定位','每3颗一组，9颗正好3组，第10颗重新是红。',8],
+        ['小鼓按“重轻轻”敲，第6下是？',['重','轻','轻','重','轻','?'],'轻',['重','轻','停'],'节奏周期定位','第4到6下重复重、轻、轻，所以第6下是轻。',7],
+        ['箭头上右下左循环，第11个朝哪？',['上','右','下','左','…','第11'],'下',['上','右','下'],'四项周期定位','8个正好两组，第9上、第10右、第11下。',8]
+      ].forEach(r=>addQuestion(logicQuestions,...r));
+
+      [['三角形',3,3,'6岁'],['正方形',4,4,'6岁'],['长方形',4,4,'7岁'],['五边形',5,5,'8岁'],['六边形',6,6,'8岁'],['梯形',4,4,'7岁']].forEach(([name,sides,corners,label])=>addQuestion(geometryQuestions,`${name}有几条边、几个角？`,[name],`${sides}条边${corners}个角`,[`${sides-1}条边${corners-1}个角`,`${sides}条边${corners}个角`,`${sides+1}条边${corners+1}个角`],`${name}边角特征`,`沿边数一圈有${sides}条边，每两条边相交形成一个角，共${corners}个角。`,Number(label[0])));
+      [['北','右转','东'],['东','右转','南'],['南','右转','西'],['西','右转','北'],['北','左转','西'],['西','左转','南'],['南','左转','东'],['东','左转','北']].forEach(([from,turn,to],i)=>addQuestion(geometryQuestions,`机器人面向${from}，${turn}一次后面向哪里？`,[from,turn,'?'],to,['北','东','南','西'].filter(x=>x===to||x!==from).slice(0,3),`四方向${turn}·从${from}开始`,`在纸上画方向十字，从${from}按${turn}方向转90度就到${to}。`,i<4?7:8));
+      [
+        ['正方体','正面','正方形'],['正方体','上面','正方形'],['圆柱','上面','圆形'],['圆柱','正面','长方形'],['球','任何方向','圆形'],['长方体','正面','长方形']
+      ].forEach(([solid,view,shape],i)=>addQuestion(geometryQuestions,`从${view}看${solid}，最可能看到什么？`,[solid,view,'?'],shape,[shape,shape==='圆形'?'正方形':'圆形','三角形'],`立体图形${view}观察`,`想象只拍下${view}的轮廓，${solid}看起来像${shape}。`,i<2?7:8));
+      [
+        ['圆形沿直径剪开','两个半圆','图形等分'],['正方形沿对角线剪开','两个三角形','对角线分割'],['长方形横着剪一刀','两个小长方形','长方形分割'],['两个半圆拼在一起','一个圆','图形复原'],['四个小正方形排成田字','一个大正方形','方格拼组'],['两个相同正方形上下拼','一个长方形','纵向拼组'],['三根同长小棒首尾相连','一个三角形','小棒围图'],['四根同长小棒首尾相连','一个正方形','小棒围正方形'],['正方形剪掉一个角','五边形','剪角增边'],['三角形剪掉一个角','四边形','三角形剪角'],['镜中看到向左箭头','原箭头向右','镜像还原'],['纸上两个点之间连接','直线最短','两点最短路径']
+      ].forEach(([prompt,answer,kp],i)=>addQuestion(geometryQuestions,`${prompt}，结果最可能是什么？`,[prompt,'→','?'],answer,[answer,'两个正方形','弯线'].filter((v,j,a)=>a.indexOf(v)===j),kp,`可以用纸片或小棒实际摆一摆，结果是${answer}。`,i<4?6:i<8?7:8));
+
+      [[3,4],[5,6],[2,7],[4,8],[6,9],[7,5],[8,3],[9,4]].forEach(([a,b],i)=>{const total=a+b;addQuestion(lifeQuestions,`买文具用了${a}元和${b}元，一共付多少元？`,[`${a}元`,`+`,`${b}元`],`${total}元`,numberChoices(total,'元'),`两件商品合计·第${i+1}组`,`把两件商品的价格相加：${a}＋${b}＝${total}元。`,i<3?6:i<6?7:8)});
+      [[8,1],[9,2],[10,1],[11,2],[13,1],[14,2],[15,1],[16,2]].forEach(([start,hours],i)=>{const end=start+hours;addQuestion(lifeQuestions,`活动${start}点开始，经过${hours}小时结束，是几点？`,[`${start}点`,`+${hours}小时`],`${end}点`,numberChoices(end,'点'),`整时经过时间·第${i+1}组`,`时针从${start}向前走${hours}格，到${end}点。`,i<3?6:i<6?7:8)});
+      [[6,2],[8,2],[9,3],[10,2],[12,3],[12,4],[15,3],[16,4]].forEach(([total,people],i)=>{const each=total/people;addQuestion(lifeQuestions,`${total}个小物品平均分给${people}人，每人几个？`,[`${total}个`,`平均分`,`${people}人`],`${each}个`,numberChoices(each,'个'),`平均分·${total}分${people}`,`轮流分给每个人，分完后每人正好${each}个。`,i<2?6:i<5?7:8)});
+      [
+        ['队伍有9人，小东排第4，他后面有几人？',['9人','第4'], '5人',['4人','5人','6人'],'序数求后面人数','第4后面是第5到第9，共5人。',7],
+        ['小红前面2人、后面5人，队伍共几人？',['前2','小红','后5'],'8人',['7人','8人','9人'],'排队求总人数','2＋1＋5＝8。',8],
+        ['盒中有14块积木，拿走6块又放回2块，现有几块？',['14','−6','+2'],'10块',['8块','10块','12块'],'拿走再放回','14－6＝8，8＋2＝10。',8],
+        ['公交车有11人，下去3人、上来5人，现在几人？',['11','−3','+5'],'13人',['8人','13人','16人'],'上下车两步问题','11－3＝8，8＋5＝13。',8],
+        ['3双手套共有几只？',['1双=2只','3双'],'6只',['3只','5只','6只'],'成双物品计数','每双2只，2＋2＋2＝6只。',7],
+        ['5盒彩笔每盒2支，共有几支？',['每盒2支','5盒'],'10支',['7支','10支','12支'],'每份相同求总数','5份2支相加，2＋2＋2＋2＋2＝10。',7],
+        ['一根绳长18米，剪去7米，还剩几米？',['18米','−7米'],'11米',['10米','11米','12米'],'较大数带单位减法','18－7＝11，单位仍是米。',8],
+        ['两本书分别有8页和6页，共多少页？',['8页','+6页'],'14页',['12页','14页','16页'],'阅读页数合计','8＋6＝14页。',7]
+      ].forEach(r=>addQuestion(lifeQuestions,...r));
+
+      const sudokuStrategies=['行缺数','列缺数','横竖交叉','首格定位','末格定位','中间格定位','数字唯一性','排除重复','行列双检','完整行补空','完整列补空','候选数排除','已知数锁定','四数齐全','反向检查','唯一答案验证'];
+      const sudokuBases=[[1,2,3,4,3,4,1,2,2,1,4,3,4,3,2,1],[4,3,2,1,2,1,4,3,3,4,1,2,1,2,3,4]];
+      sudokuStrategies.forEach((strategy,i)=>{const base=[...sudokuBases[i%2]],blank=i,answer=base[blank];base[blank]=0;const c1=answer%4+1,c2=(answer+1)%4+1;sudokuPuzzles.push({grid:base,answer,choices:[answer,c1,c2],kp:`数独·${strategy}`,clue:`先看空格所在的${i%2?'列':'行'}，再检查另一方向，1、2、3、4不能重复。`,age:i<4?6:i<10?7:8})});
+
+      [[1,2],[1,5],[1,9],[2,0],[2,4]].forEach(([tens,ones],i)=>{const n=tens*10+ones;addQuestion(numberQuestions,`${tens}个十和${ones}个一组成多少？`,[`${tens}个十`,`${ones}个一`],String(n),[String(n),String(ones*10+tens),String(n+1)],`数的组成·${n}`,`${tens}个十是${tens*10}，再加${ones}个一得到${n}。`,i<2?6:i<4?7:8)});
+      [[8,9,10],[11,12,13],[14,15,16],[17,18,19],[5,6,7]].forEach(([a,b,c],i)=>addQuestion(numberQuestions,`${b}前后相邻的两个数是哪一组？`,[String(a),String(b),String(c)],`${a}和${c}`,[`${a-1}和${b}`,`${a}和${c}`,`${b}和${c+1}`],`相邻数·${b}`,`从${b}向前数1是${a}，向后数1是${c}。`,i<1?6:i<4?7:8));
+      [[12,15,18],[7,13,9],[20,16,19],[11,17,14],[6,10,8]].forEach((set,i)=>{const max=Math.max(...set),min=Math.min(...set);addQuestion(numberQuestions,`在${set.join('、')}中找出最大和最小的数。`,set.map(String),`最大${max}，最小${min}`,[`最大${max}，最小${min}`,`最大${min}，最小${max}`,'三个数一样大'],`一组数找极值·第${i+1}组`,`先比较十位，再比较个位，最大是${max}、最小是${min}。`,i<1?6:i<4?7:8)});
+      [[11,1],[12,2],[14,4],[16,6],[19,9]].forEach(([n,ones],i)=>addQuestion(numberQuestions,`${n}分成10和几？`,[String(n),'=','10','+','?'],String(ones),numberChoices(ones),`十与个位分解·${n}`,`${n}由1个十和${ones}个一组成。`,i<2?6:i<4?7:8));
+      [[13,31],[14,41],[17,71],[20,2],[12,21]].forEach(([n,swapped],i)=>addQuestion(numberQuestions,`${n}交换十位和个位后变成多少？`,[String(n),'交换数位','?'],String(swapped),[String(n),String(swapped),String(swapped+10)],`数位交换·${n}`,`把十位和个位互换位置，得到${swapped}。`,i<1?7:8));
+      [[2,2,4,6],[3,1,4,7],[4,0,4,8],[5,0,5,10],[2,11,13,15]].forEach(([step,a,b,c],i)=>addQuestion(numberQuestions,`按每次${step}个地数，${a}、${b}、${c}，下一个是？`,[String(a),String(b),String(c),'?'],String(c+step),numberChoices(c+step),`跳数·步长${step}·第${i+1}组`,`每次增加${step}，${c}＋${step}＝${c+step}。`,i<2?6:i<4?7:8));
+
+      [[1,60,'小时与分钟'],[2,120,'两小时换分钟'],[30,0.5,'半小时关系'],[15,0.25,'一刻钟关系'],[90,1.5,'九十分钟认识']].forEach(([mins,hours,kp],i)=>{const prompt=i<2?`${hours}小时是多少分钟？`:`${mins}分钟是多长时间？`,answer=i<2?`${mins}分钟`:hours===0.5?'半小时':hours===0.25?'一刻钟':'1小时30分',choices=i<2?[`${mins-30}分钟`,answer,`${mins+30}分钟`]:[answer,'1小时','2小时'];addQuestion(measureQuestions,prompt,[String(i<2?hours:mins),i<2?'小时':'分钟'],answer,choices,kp,'1小时是60分钟，半小时30分钟，一刻钟15分钟。',i<1?7:8)});
+      [[2,30,3,0],[4,15,4,45],[7,20,8,0],[9,35,10,5],[11,10,11,50]].forEach(([h1,m1,h2,m2],i)=>{const elapsed=(h2*60+m2)-(h1*60+m1);addQuestion(measureQuestions,`从${h1}:${String(m1).padStart(2,'0')}到${h2}:${String(m2).padStart(2,'0')}经过多久？`,[`${h1}:${String(m1).padStart(2,'0')}`,'→',`${h2}:${String(m2).padStart(2,'0')}`],`${elapsed}分钟`,numberChoices(elapsed,'分钟'),`经过时间·第${i+1}组`,`把分针向前数，共走${elapsed}个小刻度。`,i<2?7:8)});
+      [['橡皮长度','厘米',6],['操场一圈','米',7],['一扇门高度','米',7],['指甲宽度','厘米',6],['天津到北京的距离','千米',8]].forEach(([thing,unit,age],i)=>addQuestion(measureQuestions,`测量${thing}，用哪个单位最合适？`,[thing,'选择单位'],unit,['厘米','米','千米'],`长度单位选择·${thing}`,`根据物体或距离的大小，${thing}用“${unit}”最合适。`,age));
+      [[1,80,'1米更长'],[2,150,'2米更长'],[1,100,'一样长'],[3,250,'3米更长'],[2,200,'一样长']].forEach(([m,cm,answer],i)=>addQuestion(measureQuestions,`${m}米和${cm}厘米相比，怎样？`,[`${m}米`,`${cm}厘米`],answer,[`${m}米更长`,`${cm}厘米更长`,'一样长'],`米厘米换算比较·第${i+1}组`,`先把${m}米换成${m*100}厘米，再与${cm}比较。`,i<2?7:8));
+      [['一粒米','克',6],['一袋大米','千克',7],['一头大象','千克',7],['一枚硬币','克',6],['一个书包','千克',7]].forEach(([thing,unit,age])=>addQuestion(measureQuestions,`表示${thing}的重量，用什么单位更合适？`,[thing,'重量单位'],unit,['克','千克','厘米'],`质量单位选择·${thing}`,`${thing}通常用“${unit}”描述重量。`,age));
+      [['水杯','水桶','水桶'],['眼药水瓶','水壶','水壶'],['浴缸','脸盆','浴缸'],['勺子','矿泉水瓶','矿泉水瓶'],['游泳池','鱼缸','游泳池']].forEach(([a,b,answer],i)=>addQuestion(measureQuestions,`${a}和${b}，通常谁的容量更大？`,[a,b],answer,[a,b,'一样大'],`生活容量比较·第${i+1}组`,`想象把水倒进两个容器，${answer}通常装得更多。`,i<2?6:i<4?7:8));
+
+      [['颜色',['红球','蓝球','红球'],6],['形状',['圆片','方片','圆片'],6],['大小',['大熊','小熊','大熊'],6],['用途',['铅笔','橡皮','水杯'],7]].forEach(([standard,items,age],i)=>addQuestion(dataQuestions,`观察${items.join('、')}，最明显的分类标准是什么？`,items,standard,[standard,...['颜色','形状','大小','用途'].filter(x=>x!==standard).slice(0,2)],`分类标准·${standard}·第${i+1}组`,`观察物品的共同点和不同点，这一组最适合按${standard}分类。`,age));
+      [[3,5],[4,7],[6,8],[2,9]].forEach(([a,b],i)=>addQuestion(dataQuestions,`统计表中A有${a}票、B有${b}票，B比A多几票？`,[`A:${a}`,`B:${b}`],`${b-a}票`,numberChoices(b-a,'票'),`统计表求差·第${i+1}组`,`用较大数减较小数：${b}－${a}＝${b-a}票。`,i<2?7:8));
+      [[2,3,4],[3,4,5],[4,2,6],[5,3,7]].forEach(([a,b,c],i)=>{const total=a+b+c;addQuestion(dataQuestions,`三类物品分别有${a}、${b}、${c}个，一共有几个？`,[String(a),String(b),String(c)],`${total}个`,numberChoices(total,'个'),`分类数据合计·第${i+1}组`,`把三类数量相加：${a}＋${b}＋${c}＝${total}。`,i<2?7:8)});
+      [[2,3],[2,4],[3,3],[3,4]].forEach(([unit,icons],i)=>{const total=unit*icons;addQuestion(dataQuestions,`图画统计中1个图标代表${unit}人，${icons}个图标代表几人？`,[`1图=${unit}人`,`${icons}个图`],`${total}人`,numberChoices(total,'人'),`象形图一图多量·第${i+1}组`,`每个图标代表${unit}人，重复相加${icons}次得到${total}人。`,i<2?7:8)});
+      [['正字1个','5票'],['正字2个','10票'],['正字1个加2笔','7票'],['正字3个','15票']].forEach(([marks,answer],i)=>addQuestion(dataQuestions,`${marks}表示多少票？`,[marks],answer,[answer,`${Number(answer.replace('票',''))-1}票`,`${Number(answer.replace('票',''))+1}票`],`正字记录读取·第${i+1}组`,'一个完整“正”字有5笔，每笔记录1票。',i<1?7:8));
+      [['晴4阴2雨1','晴天最多'],['苹果3梨5桃2','梨最多'],['红6蓝6黄4','红蓝一样多'],['故事书8科普书5','故事书多3本']].forEach(([data,answer],i)=>addQuestion(dataQuestions,`读记录“${data}”，哪个结论正确？`,data.split(/[， ]/),answer,[answer,'三种一样多','无法比较'],`数据结论判断·第${i+1}组`,'逐项比较记录中的数字，再选择与数字完全符合的结论。',i<2?7:8));
+      [['调查最爱运动','问全班每位同学'],['调查今天温度','看温度计'],['统计书架图书','分类后逐本计数'],['记录一周天气','每天固定时间观察']].forEach(([goal,answer],i)=>addQuestion(dataQuestions,`${goal}，哪种收集方法最合适？`,[goal],answer,[answer,'只凭感觉猜','只记录一次'],`数据收集方法·第${i+1}组`,'数据要与调查目标对应，并按相同标准认真记录。',i<2?7:8));
+
+      [[10,2],[12,3],[14,7]].forEach(([sum,count],i)=>{const each=sum/count;addQuestion(reasoningQuestions,`${count}个相同的圆合起来是${sum}，每个圆是多少？`,[`○×${count}=${sum}`],String(each),numberChoices(each),`相同量均分·第${i+1}组`,`把总数${sum}平均分成${count}份，每份${each}。`,i<1?7:8)});
+      [[5,3,11],[4,6,14],[7,2,16]].forEach(([x,add,result],i)=>addQuestion(reasoningQuestions,`一个数加${add}再加${x}得到${result}，原数是多少？`,['? ',`+${add}`,`+${x}`,`=${result}`],String(result-add-x),numberChoices(result-add-x),`逆推连续加法·第${i+1}组`,`从${result}倒着减${x}，再减${add}，得到${result-add-x}。`,8));
+      [[2,6],[3,9],[4,12]].forEach(([balls,weight],i)=>addQuestion(reasoningQuestions,`${balls}个球共重${weight}克，1个球重几克？`,[`${balls}球=${weight}克`],`${weight/balls}克`,numberChoices(weight/balls,'克'),`等量均分求单量·第${i+1}组`,`把${weight}克平均分给${balls}个相同的球，每个${weight/balls}克。`,i<1?7:8));
+      [[8,2],[10,4],[12,2]].forEach(([sum,diff],i)=>{const big=(sum+diff)/2;addQuestion(reasoningQuestions,`红球比蓝球多${diff}个，两种球共${sum}个，红球几个？`,[`红=蓝+${diff}`,`共${sum}`],`${big}个`,numberChoices(big,'个'),`和差分配·第${i+1}组`,`先把多出的${diff}个给红球，剩下${sum-diff}个平均分，红球共有${big}个。`,8)});
+      [[2,5],[3,4],[4,3]].forEach(([input,add],i)=>addQuestion(reasoningQuestions,`规则机把输入数加${add}。输入${input}，输出多少？`,[`${input}→?`,`规则+${add}`],String(input+add),numberChoices(input+add),`规则机直接运算·第${i+1}组`,`按规则计算${input}＋${add}＝${input+add}。`,i<1?6:7));
+      [['甲不是第1、也不是第2，三人中甲第几？','第3',['第1','第2','第3'],'双重否定定位'],['礼物不在红盒也不在蓝盒，只剩黄盒，在哪？','黄盒',['红盒','蓝盒','黄盒'],'连续排除定位'],['A不是圆、不是方，选项圆方三角，A是什么？','三角',['圆','方','三角'],'属性排除定位']].forEach(([prompt,answer,choices,kp],i)=>addQuestion(reasoningQuestions,prompt,['排除两个条件'],answer,choices,`${kp}·第${i+1}组`,'把不可能的选项逐个划掉，最后剩下的就是答案。',i<1?7:8));
+      [['鸟比笼多1，添几个笼正好？','1个'],['杯比盖少2，添几个杯正好？','2个'],['小朋友比椅子多3，添几把椅子？','3把']].forEach(([prompt,answer],i)=>addQuestion(reasoningQuestions,prompt,['一一对应','比较相差'],answer,[answer,i===0?'2个':i===1?'1个':'2把',i===2?'4把':'3个'],`一一对应补差·第${i+1}组`,'先一一配对，剩下几个没有伙伴，就补几个。',i<1?6:7));
+
+      [[2,2],[2,3],[3,2]].forEach(([tops,bottoms],i)=>addQuestion(countingQuestions,`${tops}件上衣和${bottoms}条裤子，各选一件有几种搭配？`,[`上衣${tops}`,`裤子${bottoms}`],`${tops*bottoms}种`,numberChoices(tops*bottoms,'种'),`服装搭配·${tops}×${bottoms}`,`每件上衣都能配${bottoms}条裤子，共${tops*bottoms}种。`,i<1?7:8));
+      [[2,2],[3,2],[2,3]].forEach(([roads,gates],i)=>addQuestion(countingQuestions,`先从${roads}条路中选1条，再从${gates}扇门中选1扇，共几种走法？`,[`路${roads}`,`门${gates}`],`${roads*gates}种`,numberChoices(roads*gates,'种'),`两阶段路线·${roads}×${gates}`,`每条路都可以配${gates}扇门，共${roads*gates}种。`,i<1?7:8));
+      [['1、3','13、31',2],['2、5','25、52',2],['1、2、3','12、13、21、23、31、32',6]].forEach(([cards,list,count],i)=>addQuestion(countingQuestions,`用数字卡${cards}组成不重复的两位数，共几个？`,cards.split('、'),`${count}个`,numberChoices(count,'个'),`数字卡排列·第${i+1}组`,`按十位数字分类列出：${list}，共${count}个。`,i<2?7:8));
+      [[3,3],[4,6],[5,10]].forEach(([points,total],i)=>addQuestion(countingQuestions,`一条线上有${points}个点，大小线段一起数有几条？`,[`${points}个点`],`${total}条`,numberChoices(total,'条'),`线段总数·${points}点`,`从每个起点向右连接且不重复，共能数出${total}条。`,i<1?8:8));
+      [[2,2],[3,2],[2,3]].forEach(([colors,shapes],i)=>addQuestion(countingQuestions,`${colors}种颜色和${shapes}种形状组合，共有几种不同图案？`,[`颜色${colors}`,`形状${shapes}`],`${colors*shapes}种`,numberChoices(colors*shapes,'种'),`颜色形状组合·${colors}×${shapes}`,`每种颜色都能配${shapes}种形状，共${colors*shapes}种。`,i<1?7:8));
+      [['甲乙丙排队，甲固定第一','2种'],['红黄蓝排队，红不能最后','4种'],['三本不同书排一排','6种']].forEach(([condition,answer],i)=>addQuestion(countingQuestions,`${condition}，共有几种排法？`,[condition],answer,[answer,i===0?'3种':'2种',i===2?'3种':'6种'],`条件排列·第${i+1}组`,'固定一个位置或按第一个对象分类，有顺序地列举，注意不重复。',8));
+      [['投1枚硬币','2种'],['投2枚硬币','4种'],['转盘有红黄蓝3格','3种']].forEach(([experiment,answer],i)=>addQuestion(countingQuestions,`${experiment}，可能出现几种基本结果？`,[experiment],answer,[answer,i===0?'1种':'2种',i===1?'3种':'4种'],`可能结果枚举·第${i+1}组`,'把每一种可能依次写出，再检查有没有遗漏或重复。',i<1?6:i<2?8:7));
+
+      riddles.push(
+        {q:'什么“水”永远不会流动？',a:'薪水。它是工资，不是真的水。'},{q:'什么东西有头有尾，却没有身体？',a:'硬币。它有正面和反面，也常被叫作头和尾。'},
+        {q:'什么“包”可以吃，却不能背在肩上？',a:'面包。'},{q:'什么“气”看不见，却能把气球吹大？',a:'空气。'},
+        {q:'什么“角”不能用尺子量？',a:'主角。'},{q:'赛跑时，哪个“点”大家最后才到？',a:'终点。'},
+        {q:'什么“方”不能用来辨方向？',a:'魔方。'},{q:'什么“数”每天都可能变化？',a:'岁数。'},
+        {q:'什么东西越冷越爱跑出来？',a:'鼻涕。天冷时鼻子更容易流鼻涕。'},{q:'什么东西放进口袋里，口袋反而变空了？',a:'一个洞。口袋有洞，东西就会掉出去。'},
+        {q:'什么东西有脚却不会走路？',a:'桌子或椅子。'},{q:'什么东西有翅膀却不是鸟？',a:'飞机。'},
+        {q:'什么东西有很多页，却不是树叶？',a:'书。'},{q:'什么东西能装下一间屋子，却装不下一粒米？',a:'屋里的灯光。'},
+        {q:'什么东西你对它笑，它也对你笑？',a:'镜子。'},{q:'什么东西总在你前面，你却追不上？',a:'未来。'},
+        {q:'什么东西越吹越大？',a:'气球。'},{q:'什么东西擦错字越多，自己反而越小？',a:'橡皮。'},
+        {q:'什么东西白天短、傍晚长？',a:'影子。'},{q:'什么东西不用腿，也能跑遍全世界？',a:'消息。'},
+        {q:'小明把10颗糖分给两个小朋友，为什么自己还剩10颗？',a:'因为这10颗糖原本就不是小明的，他只负责分。'},
+        {q:'两个人下了5盘棋，每人赢的盘数一样，可能吗？',a:'可能，他们不是互相下棋。'},
+        {q:'一张纸最多有几个正面？',a:'一个正面，另一面叫背面。'},
+        {q:'一个圆有几个角？',a:'0个角。它的边是弯曲的。'},
+        {q:'小华有3个哥哥，每个哥哥都有一个妹妹，家里至少几个孩子？',a:'4个。三个哥哥的妹妹可以都是小华。'},
+        {q:'把5个苹果分给5个小朋友，每人1个，怎样让篮里还留着1个？',a:'最后一个小朋友连篮子和里面的苹果一起拿走。'},
+        {q:'一只鸭子前面有1只、后面也有1只，最少共有几只鸭子？',a:'3只，排成一列即可。'},
+        {q:'一根绳子剪一刀，最多变成几段？',a:'2段。'},
+        {q:'两根绳子各剪一刀，最多共几段？',a:'4段。'},
+        {q:'一个西瓜切两刀，最多能切成几块？',a:'4块，把两刀交叉切。'},
+        {q:'什么数字加上自己仍然等于自己？',a:'0，因为0＋0＝0。'},
+        {q:'什么数字乘多少次都还是它自己？',a:'1，1乘1仍然是1。'},
+        {q:'哪两个相同的数相加等于10？',a:'5和5。'},
+        {q:'10只手指，弯下3只，还能看见几只？',a:'10只，弯下的手指仍然看得见。'},
+        {q:'一只手有5根手指，两只手共有几根？',a:'10根。'},
+        {q:'一双鞋有几只？',a:'2只。'},
+        {q:'一打铅笔通常有12支，半打有几支？',a:'6支。'},
+        {q:'为什么数字0很谦虚？',a:'因为它总说自己“一无所有”。'},
+        {q:'为什么数字1总想站在0前面？',a:'因为站成10以后，它们就更大了。'},
+        {q:'为什么数字2喜欢剪纸？',a:'因为它伸出两根手指，就像一把小剪刀。'},
+        {q:'为什么数字3爱听故事？',a:'因为它总想知道“第三集”发生了什么。'},
+        {q:'为什么数字4喜欢方方正正？',a:'因为正方形正好有4条边。'},
+        {q:'为什么数字5爱戴手套？',a:'因为一只手套正好照顾5根手指。'},
+        {q:'为什么数字7喜欢彩虹？',a:'因为大家常说彩虹有七种颜色。'},
+        {q:'为什么数字10喜欢足球队？',a:'因为它总想当“十号球员”。'},
+        {q:'小猫为什么不去参加百米赛跑？',a:'因为它只想参加“喵米”（秒米）赛跑。'},
+        {q:'小鸭为什么做题时总点头？',a:'因为它觉得答案“对鸭”（对呀）！'},
+        {q:'小鹅为什么喜欢夸同学？',a:'因为它总说：“鹅（额）外棒！”'},
+        {q:'小猪为什么上课带着尺子？',a:'因为它想把知识“量”得明明白白。'},
+        {q:'小猴为什么喜欢数香蕉？',a:'因为它想做到“心里有数”。'},
+        {q:'铅笔和橡皮比赛，谁最会改错？',a:'橡皮，因为它专门把错误擦掉。'},
+        {q:'尺子为什么从不说大概？',a:'因为它喜欢量得准确。'},
+        {q:'圆规为什么走路总绕圈？',a:'因为它的一只脚固定，另一只脚专门画圆。'},
+        {q:'钟表为什么一天要跑两圈？',a:'因为时针12小时走一圈，一天24小时走两圈。'},
+        {q:'日历为什么每天都变瘦？',a:'因为每天都要翻走一页。'},
+        {q:'哪种“班”不会坐在教室里？',a:'斑马的“斑”。'},
+        {q:'哪一节“课”不用坐在教室里听？',a:'下课。'},
+        {q:'哪种“画”不能挂在墙上？',a:'电话（画）。'},
+        {q:'哪种“园”没有围墙和大门？',a:'圆形的“圆”。'},
+        {q:'哪种“路”藏在身体里？',a:'思路，藏在脑袋里。'},
+        {q:'哪种“表”不戴在手腕上？',a:'课程表。'},
+        {q:'哪种“尺”不能装进文具盒？',a:'尺寸。它表示大小，不是一把真正的尺子。'},
+        {q:'哪种“本”不能写作业？',a:'根本。'},
+        {q:'哪种“题”不用写答案？',a:'话题。'}
+      );
+
       const sixYearKps=new Set('0的加法|10以内加法|0的减法|10以内减法|交替规律|周期规律|奇偶分类|分类判断|比较大小|排序与中间量|位置关系|对应计数|三角形特征|正方形特征|左右位置|平面与立体|图形拼组|合并问题|认识整时|长度比较|序数与数量|星期顺序|行排除|行内缺数|数的组成|20以内数比较|相邻数|数的分解|数序|按群计数|十位个位|数的范围|认识整时|轻重比较|容量比较|时间顺序|直接比较长度|按种类分类|看图比较数量|分类计数|分类标准|记录数据|等量判断|象形统计图'.split('|'));
       const eightYearKps=new Set('旋转半圈|镜面对称|图形补全|观察方向|轴对称|方位合成|图形变化|路径长短|两步加减|平均分|两步实际问题|行列联合|横竖核对|宫格规则|唯一可能|组数|五个五个数|经过时间|时间单位选择|长度单位选择|时间估计|统计后求差|读取表格|数据收集|传递推理|整体与部分|重复加法|条件推理|估计与接近|排除法|方向合成'.split('|'));
       const ageMeta={6:{icon:'🌱',label:'6岁·启蒙'},7:{icon:'🌟',label:'7岁·进阶'},8:{icon:'🚀',label:'8岁·挑战'}};
@@ -647,7 +866,7 @@
       function nextFilteredIndex(list,index){for(let step=1;step<=list.length;step++){const next=(index+step)%list.length;if(fitsAge(list[next]))return next}return index}
       function checkText(q,module){
         if(q.check)return q.check;
-        const checks={practice:'把答案代回原式，或用相反的运算检查一次。',logic:'把找到的规律从头套一遍，看看每一格是否都符合。',geometry:'用手指沿边、角或方向再数一次，也可以转动纸片验证。',life:'把答案放回生活情境，看看数量和单位是否合理。',sudoku:'横着、竖着各检查一次，1、2、3、4 都只能出现一次。',numbers:'在数轴上走一走，或把数拆成“几个十和几个一”再检查。',measure:'先认清单位或指针，再用实际物品、尺子或钟面核对。',data:'按同一个分类标准重新数一遍，再比较记录中的数字。',reasoning:'把符号换回原来的数量，从最后一个条件开始逐条检查。',counting:'按照固定顺序重新列一遍，并划掉重复或不符合条件的情况。',riddle:'把读音相近的字换回来读一遍，笑点就藏在这里。'};
+        const checks={practice:'把答案代回原式，或用相反的运算检查一次。',logic:'把找到的规律从头套一遍，看看每一格是否都符合。',geometry:'用手指沿边、角或方向再数一次，也可以转动纸片验证。',life:'把答案放回生活情境，看看数量和单位是否合理。',sudoku:'横着、竖着各检查一次，1、2、3、4 都只能出现一次。',numbers:'在数轴上走一走，或把数拆成“几个十和几个一”再检查。',measure:'先认清单位或指针，再用实际物品、尺子或钟面核对。',data:'按同一个分类标准重新数一遍，再比较记录中的数字。',reasoning:'把符号换回原来的数量，从最后一个条件开始逐条检查。',counting:'按照固定顺序重新列一遍，并划掉重复或不符合条件的情况。',riddle:'把题目的每个条件重新读一遍：谐音题要慢读，数量题可以画图，反转题要留意没说出来的假设。'};
         return checks[module]||'回到题目条件，一条一条核对答案。';
       }
       function solutionHTML(q,module,answer=q.answer){
@@ -711,6 +930,8 @@
       $('closeCelebration').onclick=()=>{$('celebration').hidden=true};
       function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
       function makeQuestion(){
+        const curatedPool=curatedMathQuestions.filter(q=>!selectedAge||q.age===selectedAge);
+        if(curatedPool.length&&Math.random()<.5){const q=curatedPool[Math.floor(Math.random()*curatedPool.length)];return{...q,choices:shuffle([...q.choices])}}
         if(selectedAge===8){
           const a=Math.floor(Math.random()*7)+7,b=Math.floor(Math.random()*(20-a))+1,sum=a+b,c=Math.floor(Math.random()*Math.max(1,sum-5))+1,answer=sum-c,kp='20以内两步加减',hint=`先算 ${a} + ${b} = ${sum}，再算 ${sum} − ${c} = ${answer}。`,wrong=new Set();
           while(wrong.size<3){const v=Math.max(0,Math.min(20,answer+(Math.floor(Math.random()*7)-3||1)));if(v!==answer)wrong.add(v)}
@@ -835,7 +1056,7 @@
       $('importProfile').onclick=()=>{
         try{const data=decodeData($('backupCode').value.trim()),name=($('profileName').value.trim()||data.name||'恢复档案').slice(0,12),pin=$('profilePin').value.trim();if(!data.learning||typeof data.learning.total!=='number'||!data.learning.points)throw new Error();if(!/^\d{4}$/.test(pin)){$('profileError').textContent='先为恢复的档案填写一个新的 4 位成长码。';return}profileName=name;currentPinHash=hashPin(name,pin);learning=data.learning;ensureTrophyData();backfillTrophyRewards();saveLearning();refreshLearningUI();$('profileError').textContent='恢复成功！现在可以进入这个档案。'}catch(e){$('profileError').textContent='这个备份码无法识别，请检查是否复制完整。'}
       };
-      $('revealRiddle').onclick=()=>{const q=riddles[riddleIndex];$('riddleAnswer').innerHTML=`<div>答案：${escapeHTML(q.a)}</div>${solutionHTML({answer:q.a,visualText:'先按题目的字面意思想一遍，再留意有没有同音字或相近读音。',hint:'把答案慢慢读出来，找到被替换的同音字，就是这个梗的机关。'},'riddle',q.a)}`;$('riddleAnswer').hidden=false;$('revealRiddle').hidden=true};$('nextRiddle').onclick=()=>{riddleIndex=(riddleIndex+1)%riddles.length;renderRiddle()};
+      $('revealRiddle').onclick=()=>{const q=riddles[riddleIndex];$('riddleAnswer').innerHTML=`<div>答案：${escapeHTML(q.a)}</div>${solutionHTML({answer:q.a,visualText:'先判断它是在考同音字、生活常识、数量关系，还是故意让人多想了一步。',hint:'把题目条件逐条对照答案；如果答案很意外，就找出自己刚才默认了哪个题目没有说过的条件。'},'riddle',q.a)}`;$('riddleAnswer').hidden=false;$('revealRiddle').hidden=true};$('nextRiddle').onclick=()=>{riddleIndex=(riddleIndex+1)%riddles.length;renderRiddle()};
       ensureTrophyData();backfillTrophyRewards();applyAgeFilterUI();renderTenLesson();renderDemoPicker();renderMath(makeQuestion());renderDemo();renderLogic();renderGeometry();renderLife();renderSudoku();renderNumbers();renderClockLesson();renderMeasure();renderData();renderReasoning();renderCounting();renderRiddle();renderReport();renderTrophies();updateTrophyPreview();saveLearning();
     })();
   </script>
