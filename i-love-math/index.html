@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>我爱数学｜儿童数学乐园</title>
+  <title>我爱数学｜儿童数学闯关与成长档案</title>
   <meta name="description" content="面向天津市幼儿园大班及小学一、二年级小朋友的互动数学练习。">
   <style>
     :root{--blue:#3768d8;--deep:#173d66;--line:#cadeee;--ink:#18324b;--yellow:#ffc94f;--green:#35ad7e;--purple:#845fc3}
@@ -11,13 +11,13 @@
     body{margin:0;min-height:100vh;color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;background:radial-gradient(circle at 8% 10%,rgba(255,220,111,.34),transparent 18rem),radial-gradient(circle at 94% 18%,rgba(81,204,171,.2),transparent 22rem),linear-gradient(180deg,#eef8ff 0%,#f7fbff 66%,#fff9e9 100%)}
     button{font:inherit;cursor:pointer}.sky{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}.sky span{position:absolute;color:rgba(55,104,216,.07);font-size:7rem;font-weight:900}.sky span:nth-child(1){left:3%;top:27%;transform:rotate(-14deg)}.sky span:nth-child(2){right:5%;top:38%;transform:rotate(16deg)}.sky span:nth-child(3){left:14%;bottom:5%;transform:rotate(8deg)}
     header{width:min(1120px,calc(100% - 32px));margin:auto;padding:28px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:14px}.mark{width:58px;height:58px;display:grid;place-items:center;border-radius:20px;color:#fff;background:var(--blue);box-shadow:0 8px 0 #214ca8;font-size:2.25rem;font-weight:900;transform:rotate(-4deg)}h1{margin:0;font-size:clamp(1.65rem,4vw,2.35rem);line-height:1;color:#1d3f72;letter-spacing:.04em}.brand p{margin:8px 0 0;color:#668098;font-size:.95rem;font-weight:700}.goal{min-width:220px;padding:12px 16px;border:2px solid #d7e6f3;border-radius:20px;background:#ffffffcc;box-shadow:0 8px 24px rgba(39,85,127,.08)}.goal small{display:block;margin-bottom:5px;color:#5c7183;font-size:.82rem;font-weight:800}.stars{display:flex;gap:7px}.star{color:#dce6ee;font-size:1.45rem;transition:.25s}.star.on{color:#ffc63d;filter:drop-shadow(0 2px #eaa516);transform:scale(1.08) rotate(5deg)}
-    .shell{width:min(1000px,calc(100% - 32px));margin:auto}.mission{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;margin-bottom:16px;padding:14px 18px;border:2px solid #bcd8f3;border-radius:22px;background:linear-gradient(110deg,#e8f4ff,#fff);box-shadow:0 8px 22px rgba(39,85,127,.08)}.mission.complete{border-color:#f0c84d;background:linear-gradient(110deg,#fff4bd,#fff)}.mission>span{font-size:2rem}.mission strong{display:block;color:#244e78}.mission p{margin:3px 0 0;color:#667f94;font-size:.86rem;font-weight:700}.mission>b{color:#e7ab16;font-size:1.7rem}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:8px;border:2px solid #d8e6f2;border-radius:24px;background:#ffffffdb;box-shadow:0 10px 30px rgba(39,85,127,.08)}.tab{height:58px;border:0;border-radius:16px;background:transparent;color:#667a8e;font-size:.95rem;font-weight:900;transition:.2s}.tab[aria-selected="true"]{color:#fff;background:var(--blue);box-shadow:0 6px 0 #214ca8;transform:translateY(-2px)}.tab[data-tab="report"][aria-selected="true"]{background:#7b55b8;box-shadow:0 6px 0 #56378a}.panel{margin-top:18px;min-height:500px;padding:clamp(22px,5vw,42px);border:2px solid rgba(202,222,238,.92);border-radius:32px;background:#ffffffed;box-shadow:0 20px 60px rgba(36,81,120,.12)}.panel[hidden]{display:none}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.heading h2{margin:10px 0 0;font-size:clamp(1.45rem,4vw,2.1rem);line-height:1.25;color:var(--deep)}.tag{display:inline-flex;padding:6px 12px;border-radius:999px;font-size:.86rem;font-weight:900;letter-spacing:.06em}.tag.blue{color:#275bbd;background:#e4edff}.tag.yellow{color:#805500;background:#fff0ba}.tag.purple{color:#744db3;background:#f1e7ff}.tag.green{color:#147153;background:#e1f8ef}.tag.orange{color:#9a5608;background:#ffead2}.tag.coral{color:#a63e56;background:#ffe4e9}.tag.report{color:#57358f;background:#eee4ff}.mascot{font-size:3.5rem;filter:drop-shadow(0 5px 2px rgba(38,61,87,.1));animation:float 2.4s ease-in-out infinite}.knowledge-line{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 -12px;color:#60778b;font-size:.9rem;font-weight:800}.knowledge-chip{display:inline-flex;padding:6px 11px;border:1px solid #bad0ef;border-radius:999px;color:#245596;background:#e8f1ff;font-weight:900}
+    .shell{width:min(1000px,calc(100% - 32px));margin:auto}.mission{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;margin-bottom:16px;padding:14px 18px;border:2px solid #bcd8f3;border-radius:22px;background:linear-gradient(110deg,#e8f4ff,#fff);box-shadow:0 8px 22px rgba(39,85,127,.08)}.mission.complete{border-color:#f0c84d;background:linear-gradient(110deg,#fff4bd,#fff)}.mission>span{font-size:2rem}.mission strong{display:block;color:#244e78}.mission p{margin:3px 0 0;color:#667f94;font-size:.86rem;font-weight:700}.mission>b{color:#e7ab16;font-size:1.7rem}.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:8px;border:2px solid #d8e6f2;border-radius:24px;background:#ffffffdb;box-shadow:0 10px 30px rgba(39,85,127,.08)}.tab{height:58px;border:0;border-radius:16px;background:transparent;color:#667a8e;font-size:.95rem;font-weight:900;transition:.2s}.tab[aria-selected="true"]{color:#fff;background:var(--blue);box-shadow:0 6px 0 #214ca8;transform:translateY(-2px)}.tab[data-tab="report"][aria-selected="true"]{background:#7b55b8;box-shadow:0 6px 0 #56378a}.panel{margin-top:18px;min-height:500px;padding:clamp(22px,5vw,42px);border:2px solid rgba(202,222,238,.92);border-radius:32px;background:#ffffffed;box-shadow:0 20px 60px rgba(36,81,120,.12)}.panel[hidden]{display:none}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.heading h2{margin:10px 0 0;font-size:clamp(1.45rem,4vw,2.1rem);line-height:1.25;color:var(--deep)}.tag{display:inline-flex;padding:6px 12px;border-radius:999px;font-size:.86rem;font-weight:900;letter-spacing:.06em}.tag.blue{color:#275bbd;background:#e4edff}.tag.yellow{color:#805500;background:#fff0ba}.tag.purple{color:#744db3;background:#f1e7ff}.tag.green{color:#147153;background:#e1f8ef}.tag.orange{color:#9a5608;background:#ffead2}.tag.coral{color:#a63e56;background:#ffe4e9}.tag.report{color:#57358f;background:#eee4ff}.mascot{font-size:3.5rem;filter:drop-shadow(0 5px 2px rgba(38,61,87,.1));animation:float 2.4s ease-in-out infinite}.knowledge-line{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 -12px;color:#60778b;font-size:.9rem;font-weight:800}.knowledge-chip{display:inline-flex;padding:6px 11px;border:1px solid #bad0ef;border-radius:999px;color:#245596;background:#e8f1ff;font-weight:900}
     .equation{display:flex;justify-content:center;align-items:center;gap:clamp(14px,3vw,28px);margin-top:28px;padding:24px;border-radius:24px;background:#f3f8ff;color:var(--deep);font-size:clamp(2.4rem,9vw,4.8rem);font-weight:950}.answer-box{width:1.25em;height:1.25em;display:grid;place-items:center;border:4px dashed #8db0e7;border-radius:22px;color:var(--blue);background:#fff}.answers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}.answer,.logic-choice{min-height:72px;border:3px solid #cbddec;border-radius:20px;background:#fff;color:#214361;font-size:2rem;font-weight:950;box-shadow:0 6px 0 #b7cedf;transition:.15s}.answer:hover,.logic-choice:hover{border-color:#76a1e3;transform:translateY(-2px)}.answer.correct,.logic-choice.correct{border-color:var(--green);background:#e5fbf2;color:#147153;box-shadow:0 6px 0 #7bcbae;animation:celebrate .45s}.answer.wrong,.logic-choice.wrong{border-color:#ef8994;background:#fff0f2;color:#bd3f50;box-shadow:0 6px 0 #eaa3ab;animation:shake .3s}.feedback{min-height:58px;margin-top:24px;display:flex;align-items:center;justify-content:center;gap:16px;color:#70869a;font-weight:800;text-align:center}.feedback strong{color:#16805d;font-size:1.2rem}.feedback .bad{color:#b4505c}.next,.play,.step{height:46px;padding:0 20px;border:0;border-radius:15px;color:#fff;background:var(--blue);box-shadow:0 5px 0 #214ca8;font-weight:900}.next:active,.play:active,.step:active{transform:translateY(3px);box-shadow:0 2px 0 #214ca8}
     .demo-picker{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.picker-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:11px;border-radius:17px;background:#f4f8fc}.picker-group>span{width:100%;color:#657b8e;font-size:.82rem;font-weight:900}.example{height:36px;padding:0 12px;border:2px solid #bcd2e5;border-radius:12px;background:#fff;color:#315875;font-weight:900}.example.active{border-color:#3768d8;color:#fff;background:#3768d8;box-shadow:0 3px 0 #214ca8}.example.subtract.active{border-color:#845fc3;background:#845fc3;box-shadow:0 3px 0 #5d3d91}.demo{display:grid;grid-template-columns:1.3fr .9fr;gap:28px;margin-top:18px}.frames{position:relative;display:grid;gap:22px;align-content:center;padding:26px;border-radius:24px;background:#f5f9fd}.frame-group{display:grid;gap:9px}.frame-label{color:#657b8e;font-size:.9rem;font-weight:900}.ten-frame{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:7px;border:3px solid #9fb8ca;border-radius:13px;background:#fff}.cell{position:relative;aspect-ratio:1;border:1px dashed #d2e1eb;border-radius:8px;background:#f6f9fb}.cell.filled:after{content:"";position:absolute;inset:17%;border-radius:50%;background:#4d7edf;box-shadow:inset 0 -4px 0 rgba(20,55,120,.18);animation:pop .35s}.cell.yellow:after,.cell.moved:after{background:var(--yellow);box-shadow:inset 0 -4px 0 rgba(159,104,0,.18)}.cell.moved:after{animation:move .6s}.arrow{position:absolute;left:50%;top:50%;padding:5px 10px;border-radius:999px;color:#995f00;background:#ffe49a;font-weight:950;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:.35s}.arrow.show{opacity:1;transform:translate(-50%,-50%) scale(1)}.arrow.subtract{color:#744db3;background:#eee2ff}.explain{padding:24px;border:2px solid #f3d475;border-radius:24px;background:#fff7d9}.step-count{display:inline-flex;padding:5px 11px;border-radius:999px;color:#805500;background:#ffe9a3;font-size:.82rem;font-weight:950}.explain h3{margin:18px 0 10px;font-size:1.45rem;line-height:1.35}.explain p{min-height:70px;margin:0;color:#705e34;line-height:1.75;font-weight:700}.step-dots{display:flex;gap:7px;margin:18px 0}.step-dots i{width:9px;height:9px;border-radius:99px;background:#dfcc93;transition:.25s}.step-dots i.on{width:24px;background:#e4a600}.demo-actions{display:flex;flex-wrap:wrap;gap:10px}.play{color:#3f2c00;background:#edaa0c;box-shadow:0 5px 0 #c98700}.play:disabled{opacity:.6;cursor:default}.step{border:2px solid #dcbd62;color:#513b0d;background:#fffdf4;box-shadow:0 5px 0 #dcbd62}
     .sequence{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:clamp(8px,2vw,16px);margin-top:28px;padding:28px 14px;border-radius:24px;background:#f7f2ff}.sequence span{min-width:clamp(52px,12vw,78px);min-height:clamp(52px,12vw,78px);display:grid;place-items:center;padding:7px;border:3px solid #cab2ef;border-radius:19px;background:#fff;color:#4f3c70;font-size:clamp(1.35rem,4vw,2.2rem);font-weight:950;box-shadow:0 6px 0 #dfd0f5}.sequence .mystery{color:#fff;background:var(--purple);border-color:#714ead;box-shadow:0 6px 0 #5d3d91;animation:pulse 1.6s infinite}.logic-options{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.logic-feedback{min-height:76px;margin-top:22px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 16px;color:#7659a8;font-weight:850;text-align:center}.logic-feedback p{margin:0;color:#5c6d7f}.sudoku-layout{display:grid;grid-template-columns:minmax(260px,360px) 1fr;gap:34px;align-items:center;margin-top:30px}.sudoku-grid{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;border:4px solid #6648a2;border-radius:20px;background:#6648a2;gap:3px;box-shadow:0 10px 0 #dfd0f5}.sudoku-grid span{aspect-ratio:1;display:grid;place-items:center;color:#3c2a60;background:#fff;font-size:clamp(1.7rem,5vw,2.5rem);font-weight:950}.sudoku-grid span.blank{color:#fff;background:#845fc3;animation:pulse 1.6s infinite}.sudoku-side>p{margin:0 0 20px;color:#657b8e;line-height:1.7;font-weight:800}.sudoku-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}footer{padding:24px 16px 34px;color:#698094;font-weight:800;text-align:center}footer b{color:#e2ad22;margin:0 5px}
-    .report-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.report-stat{padding:18px;border:2px solid #d8e5f0;border-radius:20px;background:#f8fbff;text-align:center}.report-stat b{display:block;color:#285cae;font-size:2rem}.report-stat span{color:#687e91;font-weight:800}.diagnosis{margin-top:24px;padding:20px;border:2px solid #ead7ff;border-radius:22px;background:#faf6ff}.diagnosis h3{margin:0 0 8px;color:#5d3a91}.diagnosis p{margin:0;color:#68748a;line-height:1.7;font-weight:700}.knowledge-groups{display:grid;gap:22px;margin-top:24px}.knowledge-group h3{margin:0 0 10px;color:#254a70}.knowledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.knowledge-card{padding:13px;border:2px solid #dce7f0;border-radius:16px;background:#fff}.knowledge-card strong{display:block;margin-bottom:6px;color:#294c6b}.knowledge-card span{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:.78rem;font-weight:900}.knowledge-card small{display:block;margin-top:7px;color:#718497}.status-master span{color:#147153;background:#dcf8ec}.status-growing span{color:#8a6100;background:#fff0bd}.status-review span{color:#a54152;background:#ffe2e8}.status-new span{color:#64788a;background:#edf2f6}.empty-report{margin-top:28px;padding:34px;border:3px dashed #cbb8eb;border-radius:24px;color:#6f5a91;background:#faf7ff;text-align:center;font-weight:800}.report-go{min-height:40px;margin:10px 8px 0 0;padding:0 14px;border:0;border-radius:13px;color:#fff;background:#7b55b8;box-shadow:0 4px 0 #56378a;font-weight:900}.celebration{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:rgba(29,50,78,.3);backdrop-filter:blur(5px)}.celebration[hidden]{display:none}.celebrate-card{position:relative;z-index:2;width:min(420px,calc(100% - 40px));padding:34px 25px;border:4px solid #ffd75e;border-radius:30px;background:#fff;text-align:center;box-shadow:0 24px 80px rgba(24,49,81,.28);animation:card-pop .45s}.celebrate-card .big{font-size:4rem}.celebrate-card h2{margin:8px 0;color:#244e78;font-size:2rem}.celebrate-card p{margin:0 0 20px;color:#61788d;font-weight:800;line-height:1.6}.flower{position:fixed;top:-10vh;z-index:1;font-size:clamp(1.2rem,4vw,2.3rem);animation:flower-fall 3.3s linear forwards;pointer-events:none}
+    .report-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.report-stat{padding:18px;border:2px solid #d8e5f0;border-radius:20px;background:#f8fbff;text-align:center}.report-stat b{display:block;color:#285cae;font-size:2rem}.report-stat span{color:#687e91;font-weight:800}.diagnosis{margin-top:24px;padding:20px;border:2px solid #ead7ff;border-radius:22px;background:#faf6ff}.diagnosis h3{margin:0 0 8px;color:#5d3a91}.diagnosis p{margin:0;color:#68748a;line-height:1.7;font-weight:700}.knowledge-groups{display:grid;gap:22px;margin-top:24px}.knowledge-group h3{margin:0 0 10px;color:#254a70}.knowledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.knowledge-card{padding:13px;border:2px solid #dce7f0;border-radius:16px;background:#fff}.knowledge-card strong{display:block;margin-bottom:6px;color:#294c6b}.knowledge-card span{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:.78rem;font-weight:900}.knowledge-card small{display:block;margin-top:7px;color:#718497}.status-master span{color:#147153;background:#dcf8ec}.status-growing span{color:#8a6100;background:#fff0bd}.status-review span{color:#a54152;background:#ffe2e8}.status-new span{color:#64788a;background:#edf2f6}.empty-report{margin-top:28px;padding:34px;border:3px dashed #cbb8eb;border-radius:24px;color:#6f5a91;background:#faf7ff;text-align:center;font-weight:800}.report-go{min-height:40px;margin:10px 8px 0 0;padding:0 14px;border:0;border-radius:13px;color:#fff;background:#7b55b8;box-shadow:0 4px 0 #56378a;font-weight:900}.celebration{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:rgba(29,50,78,.3);backdrop-filter:blur(5px)}.celebration[hidden]{display:none}.celebrate-card{position:relative;z-index:2;width:min(420px,calc(100% - 40px));padding:34px 25px;border:4px solid #ffd75e;border-radius:30px;background:#fff;text-align:center;box-shadow:0 24px 80px rgba(24,49,81,.28);animation:card-pop .45s}.celebrate-card .big{font-size:4rem}.celebrate-card h2{margin:8px 0;color:#244e78;font-size:2rem}.celebrate-card p{margin:0 0 20px;color:#61788d;font-weight:800;line-height:1.6}.flower{position:fixed;top:-10vh;z-index:1;font-size:clamp(1.2rem,4vw,2.3rem);animation:flower-fall 3.3s linear forwards;pointer-events:none}.header-actions{display:flex;align-items:stretch;gap:10px}.top-button{min-height:48px;padding:0 14px;border:2px solid #d7e6f3;border-radius:17px;background:#fff;color:#315675;font-weight:900;box-shadow:0 5px 0 #c5d8e7}.top-button.report-shortcut{color:#5c3990;background:#f5efff;border-color:#d8c5f2;box-shadow:0 5px 0 #cbb6e9}.top-button:hover{transform:translateY(-2px)}.profile-dialog{width:min(470px,calc(100% - 30px));padding:0;border:0;border-radius:28px;color:var(--ink);box-shadow:0 24px 90px rgba(25,48,77,.35)}.profile-dialog::backdrop{background:rgba(24,48,77,.42);backdrop-filter:blur(5px)}.profile-box{padding:28px}.profile-box h2{margin:0;color:#244e78}.profile-box>p{color:#687d90;line-height:1.65;font-weight:700}.profile-fields{display:grid;gap:12px}.profile-fields label{display:grid;gap:6px;color:#526b80;font-weight:900}.profile-fields input,.backup-code{width:100%;padding:12px 14px;border:2px solid #cbddea;border-radius:14px;background:#fafdff;color:#24425f;font:inherit}.profile-note{padding:10px 12px;border-radius:13px;color:#7a6233;background:#fff5d6;font-size:.82rem;line-height:1.6}.profile-error{min-height:22px;color:#b44455;font-weight:800}.profile-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}.profile-actions button{min-height:42px;padding:0 14px;border:0;border-radius:13px;font-weight:900}.primary-profile{color:#fff;background:#3768d8}.secondary-profile{color:#4e6579;background:#eaf1f7}.riddle-card{margin-top:28px;padding:30px;border:3px solid #f1c768;border-radius:26px;background:linear-gradient(135deg,#fff8d8,#fff);text-align:center}.riddle-card .riddle-icon{font-size:4rem}.riddle-card h3{margin:12px 0;color:#654a17;font-size:clamp(1.45rem,4vw,2rem);line-height:1.55}.riddle-answer{margin:20px 0;padding:16px;border-radius:18px;color:#764a00;background:#ffe8a1;font-size:1.2rem;font-weight:900}.riddle-answer[hidden]{display:none}.riddle-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}.riddle-actions button{min-height:48px;padding:0 18px;border:0;border-radius:15px;font-weight:900}.reveal{color:#523800;background:#ffc94f;box-shadow:0 5px 0 #d99b0a}.another{color:#fff;background:#7b55b8;box-shadow:0 5px 0 #56378a}
     @keyframes float{50%{transform:translateY(-6px) rotate(3deg)}}@keyframes pop{from{transform:scale(.4);opacity:0}}@keyframes move{from{transform:translateX(120%) scale(.6);opacity:.3}}@keyframes celebrate{50%{transform:scale(1.06) rotate(1deg)}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}@keyframes pulse{50%{transform:scale(1.05)}}@keyframes card-pop{from{opacity:0;transform:scale(.72) rotate(-4deg)}}@keyframes flower-fall{to{transform:translateY(115vh) rotate(720deg);opacity:.9}}
-    @media(max-width:720px){header{align-items:flex-start;padding-top:18px}.mark{width:50px;height:50px;border-radius:16px}.brand p,.goal small{display:none}.goal{min-width:0;padding:10px 12px}.stars{gap:2px}.star{font-size:.9rem}.tabs{grid-template-columns:repeat(2,1fr)}.tab{height:52px;font-size:.82rem}.panel{min-height:540px}.answers{grid-template-columns:repeat(2,1fr)}.demo-picker,.demo,.sudoku-layout{grid-template-columns:1fr}.sudoku-grid{width:min(100%,340px);margin:auto}.explain p{min-height:0}.feedback{flex-direction:column}.report-intro,.knowledge-grid{grid-template-columns:1fr}}
+    @media(max-width:720px){header{align-items:flex-start;padding-top:18px;flex-wrap:wrap}.mark{width:50px;height:50px;border-radius:16px}.brand p,.goal small{display:none}.header-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}.goal{grid-column:1/-1;min-width:0;padding:10px 12px}.top-button{min-height:44px}.stars{gap:2px}.star{font-size:.9rem}.tabs{grid-template-columns:repeat(2,1fr)}.tab{height:52px;font-size:.82rem}.panel{min-height:540px}.answers{grid-template-columns:repeat(2,1fr)}.demo-picker,.demo,.sudoku-layout{grid-template-columns:1fr}.sudoku-grid{width:min(100%,340px);margin:auto}.explain p{min-height:0}.feedback{flex-direction:column}.report-intro,.knowledge-grid{grid-template-columns:1fr}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -25,7 +25,11 @@
   <div class="sky" aria-hidden="true"><span>＋</span><span>△</span><span>＝</span></div>
   <header>
     <div class="brand"><span class="mark" aria-hidden="true">∞</span><div><h1>我爱数学</h1><p>天津小朋友的数学闯关乐园</p></div></div>
-    <div class="goal" aria-label="十题闯关进度"><small id="roundText">十题闯关 · 0 / 10</small><div class="stars" id="stars"></div></div>
+    <div class="header-actions">
+      <button class="top-button" id="profileButton" type="button">👤 小小数学家</button>
+      <button class="top-button report-shortcut" id="reportShortcut" type="button">📊 知识体检</button>
+      <div class="goal" aria-label="十题闯关进度"><small id="roundText">十题闯关 · 0 / 10</small><div class="stars" id="stars"></div></div>
+    </div>
   </header>
   <main class="shell">
     <div class="mission" id="mission"><span id="missionIcon">🚀</span><div><strong id="missionTitle">数学星球探险</strong><p id="missionText">再答对 5 题，就能点亮彩虹徽章。</p></div><b>🏆</b></div>
@@ -36,7 +40,10 @@
       <button class="tab" role="tab" aria-selected="false" data-tab="geometry">🧩 图形太空站</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="life">🐼 熊猫市集</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="sudoku">🕵️ 数字侦探局</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="report">📊 知识体检</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="numbers">🦁 数感王国</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="measure">⏰ 时间测量</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="data">📈 分类统计</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="riddle">😄 脑筋转转湾</button>
     </nav>
 
     <section class="panel" id="practice" role="tabpanel">
@@ -92,6 +99,26 @@
       <div class="sudoku-layout"><div class="sudoku-grid" id="sudokuGrid"></div><div class="sudoku-side"><p id="sudokuClue">横着看、竖着看，每个数字都只能出现一次。</p><div class="sudoku-options" id="sudokuOptions"></div><div class="logic-feedback" id="sudokuFeedback" aria-live="polite">✨ 找出缺少的数字</div></div></div>
     </section>
 
+    <section class="panel" id="numbers" role="tabpanel" hidden>
+      <div class="heading"><div><span class="tag blue">狮子数感王国</span><h2 id="numbersPrompt"></h2></div><span class="mascot" aria-hidden="true">🦁</span></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="numbersKp"></span></div><div class="sequence" id="numbersSequence"></div><div class="logic-options" id="numbersOptions"></div><div class="logic-feedback" id="numbersFeedback" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" id="measure" role="tabpanel" hidden>
+      <div class="heading"><div><span class="tag yellow">兔子时间实验室</span><h2 id="measurePrompt"></h2></div><span class="mascot" aria-hidden="true">🐰</span></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="measureKp"></span></div><div class="sequence" id="measureSequence"></div><div class="logic-options" id="measureOptions"></div><div class="logic-feedback" id="measureFeedback" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" id="data" role="tabpanel" hidden>
+      <div class="heading"><div><span class="tag green">企鹅分类统计站</span><h2 id="dataPrompt"></h2></div><span class="mascot" aria-hidden="true">🐧</span></div>
+      <div class="knowledge-line">本题知识点 <span class="knowledge-chip" id="dataKp"></span></div><div class="sequence" id="dataSequence"></div><div class="logic-options" id="dataOptions"></div><div class="logic-feedback" id="dataFeedback" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" id="riddle" role="tabpanel" hidden>
+      <div class="heading"><div><span class="tag coral">做题休息站</span><h2>脑筋转转湾 · 谐音梗乐园</h2></div><span class="mascot" aria-hidden="true">😄</span></div>
+      <div class="riddle-card"><div class="riddle-icon">💭</div><h3 id="riddleQuestion"></h3><div class="riddle-answer" id="riddleAnswer" hidden></div><div class="riddle-actions"><button class="reveal" id="revealRiddle">我想好啦，揭晓答案</button><button class="another" id="nextRiddle">再来一个 ↻</button></div></div>
+    </section>
+
     <section class="panel" id="report" role="tabpanel" hidden>
       <div class="heading"><div><span class="tag report">成长雷达</span><h2>知识体检报告</h2></div><span class="mascot" aria-hidden="true">🩺</span></div>
       <div id="reportBody"></div>
@@ -103,16 +130,37 @@
     <div id="flowerField"></div><div class="celebrate-card"><div class="big" id="celebrateEmoji">🌸</div><h2 id="celebrateTitle">完成 5 题啦！</h2><p id="celebrateText">认真思考的你，正在一点点变厉害！</p><button class="next" id="closeCelebration">继续探险 →</button></div>
   </div>
 
+  <dialog class="profile-dialog" id="profileDialog">
+    <form class="profile-box" id="profileForm" method="dialog">
+      <h2>👤 我的本机学习档案</h2>
+      <p>用昵称和4位成长码区分不同小朋友。数据只保存在这台设备，不会上传姓名或密码。</p>
+      <div class="profile-fields"><label>小朋友昵称<input id="profileName" maxlength="12" autocomplete="username" placeholder="例如：乐乐"></label><label>4位成长码<input id="profilePin" inputmode="numeric" maxlength="4" autocomplete="current-password" placeholder="例如：2580"></label></div>
+      <p class="profile-note">成长码只是本机档案切换码，不是网络账号密码。清除浏览器数据或换设备时，请用下面的备份码恢复。</p>
+      <div class="profile-error" id="profileError"></div><textarea class="backup-code" id="backupCode" rows="3" placeholder="点击“生成备份码”，或把另一台设备的备份码粘贴到这里"></textarea>
+      <div class="profile-actions"><button class="primary-profile" id="enterProfile" type="button">进入 / 创建档案</button><button class="secondary-profile" id="exportProfile" type="button">生成备份码</button><button class="secondary-profile" id="importProfile" type="button">导入备份码</button><button class="secondary-profile" id="closeProfile" type="button">关闭</button></div>
+    </form>
+  </dialog>
+
   <script>
     (()=>{
-      const storageKey='iLoveMathProgressV3';let learning={total:0,correct:0,points:{}};
-      try{const saved=JSON.parse(localStorage.getItem(storageKey)||'null');if(saved&&saved.points)learning=saved}catch(e){}
-      let score=learning.correct,mathAnswer=13,currentMath=null,demoIndex=0,demoStep=0,demoTimer=null,logicIndex=0,geometryIndex=0,lifeIndex=0,sudokuIndex=0;
+      const legacyKey='iLoveMathProgressV3',profileStoreKey='iLoveMathProfilesV1',activeProfileKey='iLoveMathActiveProfileV1';
+      const emptyLearning=()=>({total:0,correct:0,points:{}});
+      const hashPin=(name,pin)=>{let h=2166136261;for(const ch of `${name}|${pin}`){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return (h>>>0).toString(36)};
+      const encodeData=value=>btoa(unescape(encodeURIComponent(JSON.stringify(value))));
+      const decodeData=value=>JSON.parse(decodeURIComponent(escape(atob(value))));
+      const readCookieBackup=()=>{try{const row=document.cookie.split('; ').find(v=>v.startsWith('iLoveMathBackup='));return row?decodeData(decodeURIComponent(row.split('=').slice(1).join('='))):null}catch(e){return null}};
+      let profiles={};try{profiles=JSON.parse(localStorage.getItem(profileStoreKey)||'{}')||{}}catch(e){}
+      const cookieBackup=readCookieBackup();if(cookieBackup&&cookieBackup.name&&cookieBackup.learning&&!profiles[cookieBackup.name])profiles[cookieBackup.name]={pinHash:cookieBackup.pinHash||hashPin(cookieBackup.name,'0000'),learning:cookieBackup.learning};
+      let legacy=null;try{legacy=JSON.parse(localStorage.getItem(legacyKey)||'null')}catch(e){}
+      let profileName=localStorage.getItem(activeProfileKey)||Object.keys(profiles)[0]||'小小数学家';
+      if(!profiles[profileName])profiles[profileName]={pinHash:hashPin(profileName,'0000'),learning:legacy&&legacy.points?legacy:emptyLearning()};
+      let currentPinHash=profiles[profileName].pinHash,learning=profiles[profileName].learning||emptyLearning();
+      let score=learning.correct,mathAnswer=13,currentMath=null,demoIndex=0,demoStep=0,demoTimer=null,logicIndex=0,geometryIndex=0,lifeIndex=0,sudokuIndex=0,numbersIndex=0,measureIndex=0,dataIndex=0,riddleIndex=0;
       const $=id=>document.getElementById(id);
       const praise=['答对啦！你的数学雷达真灵敏！','太棒了！你发现了关键线索！','成功通关！给聪明的你点赞！','回答正确！小脑筋闪闪发光！'];
       const encourage=['没关系，答错是在帮我们找到进步方向。','已经很接近啦！看懂提示，下次一定能行。','勇敢尝试就是胜利，再练一次会更棒。','好问题！我们发现了一个可以升级的地方。'];
-      const moduleNames={practice:'口算海湾',logic:'密码森林',geometry:'图形太空站',life:'熊猫市集',sudoku:'数字侦探局'};
-      const moduleIcons={practice:'🐳',logic:'🦉',geometry:'🧩',life:'🐼',sudoku:'🕵️'};
+      const moduleNames={practice:'口算海湾',logic:'密码森林',geometry:'图形太空站',life:'熊猫市集',sudoku:'数字侦探局',numbers:'数感王国',measure:'时间测量实验室',data:'分类统计站'};
+      const moduleIcons={practice:'🐳',logic:'🦉',geometry:'🧩',life:'🐼',sudoku:'🕵️',numbers:'🦁',measure:'⏰',data:'🐧'};
       const logicQuestions=[
         {prompt:'小火车下一节车厢里是什么数字？',sequence:['2','4','6','?'],answer:'8',choices:['7','8','9'],hint:'每次都多 2。'},
         {prompt:'数一数，下一个数字是什么？',sequence:['1','3','5','?'],answer:'7',choices:['6','7','8'],hint:'这是单数队伍，每次多 2。'},
@@ -202,7 +250,83 @@
         {grid:[1,2,0,4,3,4,1,2,2,1,4,3,4,3,2,1],answer:3,choices:[2,3,4],kp:'唯一可能',clue:'第一行只有一个数字没有出现。'}
       );
 
-      function saveLearning(){try{localStorage.setItem(storageKey,JSON.stringify(learning))}catch(e){}}
+      const numberQuestions=[
+        {prompt:'哪张卡表示“十位是1，个位是6”？',sequence:['1个十','6个一'],answer:'16',choices:['6','16','61'],kp:'数的组成',hint:'1 个十和 6 个一组成 16。'},
+        {prompt:'哪个数字最大？',sequence:['12','18','15'],answer:'18',choices:['12','15','18'],kp:'20以内数比较',hint:'十位相同，再比较个位，8 最大。'},
+        {prompt:'15 前面的一个数是几？',sequence:['?','15','16'],answer:'14',choices:['13','14','16'],kp:'相邻数',hint:'按顺序数，14、15、16。'},
+        {prompt:'把 13 分成 10 和几？',sequence:['13','=','10','+','?'],answer:'3',choices:['2','3','4'],kp:'数的分解',hint:'10 + 3 = 13。'},
+        {prompt:'哪个数离 10 最近？',sequence:['6','9','14'],answer:'9',choices:['6','9','14'],kp:'数的估计',hint:'9 只差 1 就到 10。'},
+        {prompt:'从 7 开始两个两个地数，下一个是？',sequence:['7','9','11','?'],answer:'13',choices:['12','13','14'],kp:'跳数',hint:'每次增加 2。'},
+        {prompt:'9 和 11 中间藏着谁？',sequence:['9','?','11'],answer:'10',choices:['8','10','12'],kp:'数序',hint:'9 后面是 10，10 后面是 11。'},
+        {prompt:'两张数字卡 1 和 7，组成的较大两位数是？',sequence:['1','7'],answer:'71',choices:['17','71','77'],kp:'组数',hint:'把较大的 7 放在十位，得到 71。'},
+        {prompt:'哪一组正好有 10 个？',sequence:['⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐','🍎×8','⚽×6'],answer:'星星',choices:['星星','苹果','足球'],kp:'按群计数',hint:'第一组星星正好是 10 颗。'},
+        {prompt:'18 里面有几个十和几个一？',sequence:['18'],answer:'1个十8个一',choices:['1个十8个一','8个十1个一','18个十'],kp:'十位个位',hint:'18 的十位是 1，个位是 8。'},
+        {prompt:'比 12 大、比 14 小的数是？',sequence:['12','< ? <','14'],answer:'13',choices:['11','13','15'],kp:'数的范围',hint:'12 和 14 之间只有 13。'},
+        {prompt:'0、5、10、15，接下来是？',sequence:['0','5','10','15','?'],answer:'20',choices:['16','18','20'],kp:'五个五个数',hint:'每次增加 5。'}
+      ];
+      const measureQuestions=[
+        {prompt:'长针指12、短针指6，是几点？',sequence:['🕕'],answer:'6点',choices:['5点','6点','7点'],kp:'认识整时',hint:'长针指 12 时看短针，短针指 6。'},
+        {prompt:'3点过1小时是几点？',sequence:['3点','+1小时'],answer:'4点',choices:['2点','4点','5点'],kp:'经过时间',hint:'时针向后走一格到 4。'},
+        {prompt:'哪种工具适合量铅笔长度？',sequence:['铅笔','?'],answer:'直尺',choices:['直尺','体温计','钟表'],kp:'测量工具',hint:'直尺可以测量较短物体的长度。'},
+        {prompt:'1米和50厘米，哪个更长？',sequence:['1米','50厘米'],answer:'1米',choices:['1米','50厘米','一样长'],kp:'长度单位比较',hint:'1 米等于 100 厘米，比 50 厘米长。'},
+        {prompt:'哪一个通常最重？',sequence:['羽毛','西瓜','铅笔'],answer:'西瓜',choices:['羽毛','西瓜','铅笔'],kp:'轻重比较',hint:'西瓜通常比羽毛和铅笔重。'},
+        {prompt:'一节课大约40什么？',sequence:['一节课','40 ?'],answer:'分钟',choices:['秒','分钟','小时'],kp:'时间单位选择',hint:'一节课通常用“分钟”来表示。'},
+        {prompt:'早上8点到9点经过多久？',sequence:['8点','→','9点'],answer:'1小时',choices:['1小时','2小时','半天'],kp:'时段计算',hint:'钟面从 8 走到 9，经过 1 小时。'},
+        {prompt:'杯子和水桶，谁装的水更多？',sequence:['🥤','🪣'],answer:'水桶',choices:['杯子','水桶','一样多'],kp:'容量比较',hint:'水桶通常比杯子的容量大。'},
+        {prompt:'测量教室长度，更适合用什么单位？',sequence:['教室长度'],answer:'米',choices:['厘米','米','分钟'],kp:'长度单位选择',hint:'较长的距离通常用“米”。'},
+        {prompt:'昨天、今天、明天，排在中间的是？',sequence:['昨天','今天','明天'],answer:'今天',choices:['昨天','今天','明天'],kp:'时间顺序',hint:'今天在昨天之后、明天之前。'},
+        {prompt:'哪件事大约需要10秒？',sequence:['眨10次眼','睡一晚','上一天学'],answer:'眨10次眼',choices:['眨10次眼','睡一晚','上一天学'],kp:'时间估计',hint:'10 秒很短，适合描述眨几次眼。'},
+        {prompt:'两支铅笔一端对齐，伸得更远的那支怎样？',sequence:['✏️短','✏️——长'],answer:'更长',choices:['更长','更短','一样长'],kp:'直接比较长度',hint:'一端对齐后，看另一端谁伸得更远。'}
+      ];
+      const dataQuestions=[
+        {prompt:'把苹果、香蕉、汽车分类，哪一个不属于水果？',sequence:['🍎','🍌','🚗'],answer:'汽车',choices:['苹果','香蕉','汽车'],kp:'按种类分类',hint:'苹果和香蕉是水果，汽车不是。'},
+        {prompt:'红球3个、蓝球5个，哪种更多？',sequence:['🔴×3','🔵×5'],answer:'蓝球',choices:['红球','蓝球','一样多'],kp:'看图比较数量',hint:'5 比 3 大，所以蓝球更多。'},
+        {prompt:'投票：猫4票、狗6票、兔2票，谁最受欢迎？',sequence:['猫4','狗6','兔2'],answer:'狗',choices:['猫','狗','兔'],kp:'简单统计表',hint:'票数最多的是狗，得到 6 票。'},
+        {prompt:'按颜色分组，黄色组有几个？',sequence:['🟡','🔵','🟡','🟡','🔵'],answer:'3个',choices:['2个','3个','4个'],kp:'分类计数',hint:'黄色出现在第 1、3、4 个，共 3 个。'},
+        {prompt:'图书角：故事书8本、画册5本，故事书多几本？',sequence:['故事书8','画册5'],answer:'3本',choices:['2本','3本','13本'],kp:'统计后求差',hint:'8 − 5 = 3。'},
+        {prompt:'哪种分法是按形状分类？',sequence:['○○一组','△△一组'],answer:'圆和三角分开',choices:['圆和三角分开','红色和蓝色分开','大和小分开'],kp:'分类标准',hint:'题目按圆形和三角形的形状来分。'},
+        {prompt:'天气记录：晴晴雨晴晴，晴天有几天？',sequence:['☀️','☀️','🌧️','☀️','☀️'],answer:'4天',choices:['3天','4天','5天'],kp:'记录数据',hint:'数一数太阳图标，一共有 4 个。'},
+        {prompt:'积木统计：红2、黄2、蓝2，三种颜色怎样？',sequence:['红2','黄2','蓝2'],answer:'一样多',choices:['红最多','蓝最少','一样多'],kp:'等量判断',hint:'三种颜色都是 2 块。'},
+        {prompt:'从一堆玩具中找出4辆车，第一步做什么？',sequence:['🧸🚗⚽🚗🚗🪁🚗'],answer:'先按种类分类',choices:['先按种类分类','先闭眼猜','全部拿走'],kp:'分类再计数',hint:'先把汽车放在一起，再数会更清楚。'},
+        {prompt:'表格中星期三读书7本，星期二5本，哪天更多？',sequence:['周二5','周三7'],answer:'星期三',choices:['星期二','星期三','一样多'],kp:'读取表格',hint:'7 比 5 多。'},
+        {prompt:'🍎代表1个苹果，图中有几个苹果？',sequence:['🍎','🍎','🍎','🍎','🍎'],answer:'5个',choices:['4个','5个','6个'],kp:'象形统计图',hint:'一个图标表示一个，数到 5。'},
+        {prompt:'调查最喜欢的运动，怎样记录最方便？',sequence:['跑步','跳绳','游泳'],answer:'画正字或打勾',choices:['画正字或打勾','只靠记忆','不记录'],kp:'数据收集',hint:'每得到一票就做一个记号，方便统计。'}
+      ];
+      const riddles=[
+        {q:'小羊做错题为什么一点也不慌？',a:'因为它说：“咩关系！”（没关系）'},
+        {q:'哪种“米”放进锅里也煮不成饭？',a:'厘米。它是长度单位呀！'},
+        {q:'哪种“羊”从来不吃草？',a:'海洋（羊）。'},
+        {q:'铅笔为什么最会道歉？',a:'因为它常说：“对不齐（起）！”'},
+        {q:'数字8为什么喜欢站着睡觉？',a:'因为一躺下就变成“∞”，睡不完啦！'},
+        {q:'数字6为什么倒立后变厉害了？',a:'因为它一倒立就变成9，增加了一半。'},
+        {q:'什么“布”怎么剪也剪不断？',a:'瀑布。'},
+        {q:'什么“球”谁都拍不动？',a:'地球。'},
+        {q:'什么“花”不能用水浇？',a:'雪花。'},
+        {q:'什么“池”里一滴水也没有？',a:'电池。'},
+        {q:'什么“鱼”不会游泳，还会发出声音？',a:'木鱼。'},
+        {q:'什么“车”没有轮子，却天天转？',a:'风车。'},
+        {q:'什么“门”永远也关不上？',a:'球门。'},
+        {q:'什么“路”不需要用脚走？',a:'思路。'},
+        {q:'什么“河”里找不到一滴河水？',a:'银河。'},
+        {q:'什么“面”不能当作早餐吃？',a:'见面。'},
+        {q:'为什么“0”最喜欢和“8”交朋友？',a:'因为8给0系上了两条腰带。'},
+        {q:'什么时候四减一会等于五？',a:'四边形剪掉一个角，会变成五边形。'},
+        {q:'一个字，大家看到它都会念错，是什么字？',a:'“错”字。'},
+        {q:'小鱼为什么不爱上网课？',a:'因为它总是“掉线”，掉到水线下面。'},
+        {q:'小猫考试为什么只带一支笔？',a:'因为它想“一笔喵成”（一笔描成）。'},
+        {q:'时钟为什么从不迷路？',a:'因为它一直按“点”走。'},
+        {q:'哪种“饭”不能吃，大家还都怕它？',a:'麻烦（饭）。'},
+        {q:'哪种“糖”尝起来一点也不甜？',a:'荒唐（糖）。'}
+      ];
+
+      function writeCookieBackup(){
+        try{const payload=encodeData({name:profileName,pinHash:currentPinHash,learning});if(payload.length<3600)document.cookie=`iLoveMathBackup=${encodeURIComponent(payload)}; Max-Age=31536000; Path=/; SameSite=Lax; Secure`}catch(e){}
+      }
+      function saveLearning(){
+        profiles[profileName]={pinHash:currentPinHash,learning};
+        try{localStorage.setItem(profileStoreKey,JSON.stringify(profiles));localStorage.setItem(activeProfileKey,profileName);localStorage.setItem(legacyKey,JSON.stringify(learning))}catch(e){}
+        writeCookieBackup();if($('profileButton'))$('profileButton').textContent=`👤 ${profileName}`;
+      }
       function updateStars(){
         const round=learning.total%10;$('roundText').textContent=`十题闯关 · ${round} / 10`;$('stars').innerHTML='';
         for(let i=0;i<10;i++){const s=document.createElement('span');s.className=`star${i<round?' on':''}`;s.textContent='★';$('stars').appendChild(s)}
@@ -268,7 +392,8 @@
         $('logicFeedback').innerHTML=`<strong class="${correct?'':'bad'}">${correct?praise[Math.floor(Math.random()*praise.length)]:encourage[Math.floor(Math.random()*encourage.length)]}</strong><p>${q.hint}</p><small>本题只考查：${q.kp}</small>`;const next=document.createElement('button');next.className='next';next.textContent='继续探险 ↻';next.onclick=()=>{logicIndex=(logicIndex+1)%logicQuestions.length;renderLogic()};$('logicFeedback').appendChild(next);
       }
       function renderChoice(prefix,q,nextAction){
-        $(prefix+'Prompt').textContent=q.prompt;$(prefix+'Kp').textContent=`⭐ ${q.kp}`;$(prefix+'Sequence').innerHTML=q.sequence.map(v=>`<span class="${v==='?'?'mystery':''}">${v}</span>`).join('');$(prefix+'Options').innerHTML='';$(prefix+'Feedback').textContent=prefix==='geometry'?'✨ 观察边、角、方向和位置，修好太空站。':'✨ 帮熊猫店长解决一个真实的小问题。';
+        const intros={geometry:'✨ 观察边、角、方向和位置，修好太空站。',life:'✨ 帮熊猫店长解决一个真实的小问题。',numbers:'✨ 比一比、拆一拆，让数字变成好朋友。',measure:'✨ 认钟表、比长短，完成兔子实验。',data:'✨ 分类、记录、比较，读懂企鹅统计图。'};
+        $(prefix+'Prompt').textContent=q.prompt;$(prefix+'Kp').textContent=`⭐ ${q.kp}`;$(prefix+'Sequence').innerHTML=q.sequence.map(v=>`<span class="${v==='?'?'mystery':''}">${v}</span>`).join('');$(prefix+'Options').innerHTML='';$(prefix+'Feedback').textContent=intros[prefix]||'✨ 开动脑筋，找到唯一答案。';
         q.choices.forEach(value=>{const b=document.createElement('button');b.className='logic-choice';b.textContent=value;b.onclick=()=>answerChoice(prefix,b,value,q,nextAction);$(prefix+'Options').appendChild(b)});
       }
       function answerChoice(prefix,button,value,q,nextAction){
@@ -277,6 +402,10 @@
       }
       function renderGeometry(){renderChoice('geometry',geometryQuestions[geometryIndex],()=>{geometryIndex=(geometryIndex+1)%geometryQuestions.length;renderGeometry()})}
       function renderLife(){renderChoice('life',lifeQuestions[lifeIndex],()=>{lifeIndex=(lifeIndex+1)%lifeQuestions.length;renderLife()})}
+      function renderNumbers(){renderChoice('numbers',numberQuestions[numbersIndex],()=>{numbersIndex=(numbersIndex+1)%numberQuestions.length;renderNumbers()})}
+      function renderMeasure(){renderChoice('measure',measureQuestions[measureIndex],()=>{measureIndex=(measureIndex+1)%measureQuestions.length;renderMeasure()})}
+      function renderData(){renderChoice('data',dataQuestions[dataIndex],()=>{dataIndex=(dataIndex+1)%dataQuestions.length;renderData()})}
+      function renderRiddle(){const q=riddles[riddleIndex];$('riddleQuestion').textContent=q.q;$('riddleAnswer').textContent=`答案：${q.a}`;$('riddleAnswer').hidden=true;$('revealRiddle').hidden=false}
       function renderSudoku(){
         const q=sudokuPuzzles[sudokuIndex];$('sudokuKp').textContent=`⭐ ${q.kp}`;$('sudokuClue').textContent=q.clue;$('sudokuGrid').innerHTML=q.grid.map(v=>`<span class="${v===0?'blank':''}">${v||'?'}</span>`).join('');$('sudokuOptions').innerHTML='';$('sudokuFeedback').textContent='✨ 用排除法找出唯一答案。';
         q.choices.forEach(value=>{const b=document.createElement('button');b.className='logic-choice';b.textContent=value;b.onclick=()=>answerSudoku(b,value,q);$('sudokuOptions').appendChild(b)});
@@ -287,8 +416,8 @@
       }
       function statusFor(p){if(!p||!p.attempts)return{key:'new',label:'未检测'};const rate=p.correct/p.attempts;if(p.attempts>=2&&rate>=.8)return{key:'master',label:'已掌握'};if(rate<.6)return{key:'review',label:'建议复习'};return{key:'growing',label:'成长中'}}
       function allKnowledge(){
-        const groups={practice:['0的加法','10以内加法','20以内进位加法','20以内不进位加法','0的减法','10以内减法','20以内退位减法','20以内不退位减法'],logic:[],geometry:[],life:[],sudoku:[]};
-        logicQuestions.forEach(q=>{if(!groups.logic.includes(q.kp))groups.logic.push(q.kp)});geometryQuestions.forEach(q=>{if(!groups.geometry.includes(q.kp))groups.geometry.push(q.kp)});lifeQuestions.forEach(q=>{if(!groups.life.includes(q.kp))groups.life.push(q.kp)});sudokuPuzzles.forEach(q=>{if(!groups.sudoku.includes(q.kp))groups.sudoku.push(q.kp)});return groups;
+        const groups={practice:['0的加法','10以内加法','20以内进位加法','20以内不进位加法','0的减法','10以内减法','20以内退位减法','20以内不退位减法'],logic:[],geometry:[],life:[],sudoku:[],numbers:[],measure:[],data:[]};
+        logicQuestions.forEach(q=>{if(!groups.logic.includes(q.kp))groups.logic.push(q.kp)});geometryQuestions.forEach(q=>{if(!groups.geometry.includes(q.kp))groups.geometry.push(q.kp)});lifeQuestions.forEach(q=>{if(!groups.life.includes(q.kp))groups.life.push(q.kp)});sudokuPuzzles.forEach(q=>{if(!groups.sudoku.includes(q.kp))groups.sudoku.push(q.kp)});numberQuestions.forEach(q=>{if(!groups.numbers.includes(q.kp))groups.numbers.push(q.kp)});measureQuestions.forEach(q=>{if(!groups.measure.includes(q.kp))groups.measure.push(q.kp)});dataQuestions.forEach(q=>{if(!groups.data.includes(q.kp))groups.data.push(q.kp)});return groups;
       }
       function renderReport(){
         if(!$('reportBody'))return;if(learning.total===0){$('reportBody').innerHTML='<div class="empty-report">🌱 还没有体检记录<br><br>先去完成几道题，这里会自动生成知识点报告。</div>';return}
@@ -297,7 +426,23 @@
         review.slice(0,4).forEach(item=>{html+=`<button class="report-go" data-go="${item.module}">练习 ${item.kp}</button>`});html+='</div><div class="knowledge-groups">';
         const groups=allKnowledge();Object.keys(groups).forEach(module=>{html+=`<section class="knowledge-group"><h3>${moduleIcons[module]} ${moduleNames[module]}</h3><div class="knowledge-grid">`;groups[module].forEach(kp=>{const p=learning.points[kp],s=statusFor(p),detail=p?`${p.correct} / ${p.attempts} 次答对`:'做题后生成评价';html+=`<div class="knowledge-card status-${s.key}"><strong>${kp}</strong><span>${s.label}</span><small>${detail}</small></div>`});html+='</div></section>'});html+='</div>';$('reportBody').innerHTML=html;document.querySelectorAll('.report-go').forEach(b=>b.onclick=()=>switchTab(b.dataset.go));
       }
-      renderMath();renderDemo();renderLogic();renderGeometry();renderLife();renderSudoku();renderReport();updateStars();
+      function refreshLearningUI(){score=learning.correct;renderMath(makeQuestion());renderLogic();renderGeometry();renderLife();renderSudoku();renderNumbers();renderMeasure();renderData();renderReport();updateStars()}
+      $('reportShortcut').onclick=()=>switchTab('report');
+      $('profileButton').onclick=()=>{$('profileName').value=profileName;$('profilePin').value='';$('profileError').textContent='';$('backupCode').value='';$('profileDialog').showModal()};
+      $('closeProfile').onclick=()=>$('profileDialog').close();
+      $('profileForm').onsubmit=e=>e.preventDefault();
+      $('enterProfile').onclick=()=>{
+        const name=$('profileName').value.trim(),pin=$('profilePin').value.trim(),reserved=['__proto__','prototype','constructor'];$('profileError').textContent='';
+        if(!name||name.length>12||reserved.includes(name)){$('profileError').textContent='请填写 1—12 个字的昵称。';return}if(!/^\d{4}$/.test(pin)){$('profileError').textContent='成长码需要正好 4 位数字。';return}
+        const exists=Object.prototype.hasOwnProperty.call(profiles,name),pinHash=hashPin(name,pin);if(exists&&profiles[name].pinHash!==pinHash){$('profileError').textContent='成长码不正确，请再试一次。';return}
+        profileName=name;currentPinHash=pinHash;learning=exists&&profiles[name].learning?profiles[name].learning:emptyLearning();saveLearning();refreshLearningUI();$('profileDialog').close();
+      };
+      $('exportProfile').onclick=async()=>{const code=encodeData({v:1,name:profileName,learning});$('backupCode').value=code;$('backupCode').select();try{await navigator.clipboard.writeText(code);$('profileError').textContent='备份码已生成并复制，请妥善保存。'}catch(e){$('profileError').textContent='备份码已生成，请长按或复制保存。'}};
+      $('importProfile').onclick=()=>{
+        try{const data=decodeData($('backupCode').value.trim()),name=($('profileName').value.trim()||data.name||'恢复档案').slice(0,12),pin=$('profilePin').value.trim();if(!data.learning||typeof data.learning.total!=='number'||!data.learning.points)throw new Error();if(!/^\d{4}$/.test(pin)){$('profileError').textContent='先为恢复的档案填写一个新的 4 位成长码。';return}profileName=name;currentPinHash=hashPin(name,pin);learning=data.learning;saveLearning();refreshLearningUI();$('profileError').textContent='恢复成功！现在可以进入这个档案。'}catch(e){$('profileError').textContent='这个备份码无法识别，请检查是否复制完整。'}
+      };
+      $('revealRiddle').onclick=()=>{$('riddleAnswer').hidden=false;$('revealRiddle').hidden=true};$('nextRiddle').onclick=()=>{riddleIndex=(riddleIndex+1)%riddles.length;renderRiddle()};
+      renderMath();renderDemo();renderLogic();renderGeometry();renderLife();renderSudoku();renderNumbers();renderMeasure();renderData();renderRiddle();renderReport();updateStars();saveLearning();
     })();
   </script>
 </body>
