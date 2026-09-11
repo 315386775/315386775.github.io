@@ -152,7 +152,7 @@
       let profiles={};try{profiles=JSON.parse(localStorage.getItem(profileStoreKey)||'{}')||{}}catch(e){}
       const cookieBackup=readCookieBackup();if(cookieBackup&&cookieBackup.name&&cookieBackup.learning&&!profiles[cookieBackup.name])profiles[cookieBackup.name]={pinHash:cookieBackup.pinHash||hashPin(cookieBackup.name,'0000'),learning:cookieBackup.learning};
       let legacy=null;try{legacy=JSON.parse(localStorage.getItem(legacyKey)||'null')}catch(e){}
-      let profileName=localStorage.getItem(activeProfileKey)||Object.keys(profiles)[0]||'小小数学家';
+      let savedProfile='';try{savedProfile=localStorage.getItem(activeProfileKey)||''}catch(e){}let profileName=savedProfile||Object.keys(profiles)[0]||'小小数学家';
       if(!profiles[profileName])profiles[profileName]={pinHash:hashPin(profileName,'0000'),learning:legacy&&legacy.points?legacy:emptyLearning()};
       let currentPinHash=profiles[profileName].pinHash,learning=profiles[profileName].learning||emptyLearning();
       let score=learning.correct,mathAnswer=13,currentMath=null,demoIndex=0,demoStep=0,demoTimer=null,logicIndex=0,geometryIndex=0,lifeIndex=0,sudokuIndex=0,numbersIndex=0,measureIndex=0,dataIndex=0,riddleIndex=0;
